@@ -101,8 +101,10 @@ class Home extends Component {
 
 		return (
 			<div id="home-city">
+			<div id="box">
 				<h2>Please select the city you are in</h2>
-				<p>You can then begin to ask the questions you need</p>
+				<div id="chooser">
+				<h4>You can then begin to ask the questions you need</h4>
 			
 				
 				<Autosuggest 
@@ -114,11 +116,12 @@ class Home extends Component {
 					renderSuggestion={renderSuggestion}
 					inputProps={inputProps} />
 					
-					
-					<button onClick={} >GO</button>
-		
-
-				<p>{this.state.value}</p>
+					<button className="my-btn" type="submit" value="submit">GO</button>
+				</div>
+				</div>
+				<p>You're new to a city? Come talk to people who know the city and easily get around!</p>
+				<p>We want to create a community of people that can help each other with what they have to offer. 
+				So don't doubt to find help here and to meet new people.</p>
 			</div>
 			);
 	}

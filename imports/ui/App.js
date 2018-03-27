@@ -32,7 +32,7 @@ export class App extends Component {
         </ul>
 
         <h1><span className="fa">&#xf25b;</span>&nbsp; Questions & Answers</h1>
-
+        <hr/>
 
         <div className="content">
             <Route exact path="/" component={Home}/>
