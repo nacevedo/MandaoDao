@@ -1,0 +1,117 @@
+/* Basic styling for the web site */
+#render-target {
+  font-size: 16px;
+  color: #424848;
+  font-family: 'Raleway', sans-serif;
+
+  background: linear-gradient(to top right, rgba(12,183,225,1), rgba(22,202,202,1), rgba(29,219,182,1));
+
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+#home-city {
+	text-align: center;
+	padding: 50px;
+}
+
+#render-target h1{
+  text-align: center;
+  color: #fcfefd;
+  font-family: 'Bitter', serif;
+}
+
+/* Header */ 
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  
+  padding: 0px;
+  margin: 0;
+}
+ul.header li a {
+  color: #424848;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px;
+  display: inline-block;
+}
+.active {
+  background-color: #FFB335;
+}
+
+#sign-in-place {
+	float: right;
+	padding-right: 45px;
+}
+
+/* React autosuggest text field */ 
+
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  width: 280px;
+  height: 45px;
+  padding: 10px 20px;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #9ee4e3;
+  background-color: #fcfefd;
+  border-radius: 25px;
+  -webkit-appearance: none;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input::-ms-clear {
+  display: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  width: 280px;
+  border: 1px solid #9ee4e3;
+  background-color: #fcfefd;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #FFB335;
+}
+
+.react-autosuggest__section-container--first {
+  border-top: 0;
+}
+
