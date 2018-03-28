@@ -16,10 +16,17 @@ export class App extends Component {
     super(props);
 
     this.state={
-      city: ""
+      city: "City"
     };
   }
 
+
+  onChangeCity(newCity){
+    console.log(this.props);
+    this.setState({
+      city: newCity
+    });
+  }
 
   render() {
     return (
@@ -35,8 +42,8 @@ export class App extends Component {
         <hr/>
 
         <div className="content">
-            <Route exact path="/" component={Home}/>
-            <Route path="/city" component={Stuff}/>
+            <Route exact path="/" render={()=> <Home updateCity={this.onChangeCity.bind(this)} />} />
+            <Route path="/city/" render={()=> <Stuff city={this.state.city} />} />
         </div>
         
       </div>

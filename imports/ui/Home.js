@@ -87,7 +87,9 @@ class Home extends Component {
 		});
 	};
 
-
+	onChangeCity(){
+		this.props.updateCity(this.state.value);
+	}
 
 	render() {
 
@@ -116,7 +118,7 @@ class Home extends Component {
 					renderSuggestion={renderSuggestion}
 					inputProps={inputProps} />
 					
-					<button className="my-btn" type="submit" value="submit">GO</button>
+					<button onClick={this.onChangeCity.bind(this)} className="my-btn">GO</button>
 				</div>
 				</div>
 				<p>You're new to a city? Come talk to people who know the city and easily get around!</p>
