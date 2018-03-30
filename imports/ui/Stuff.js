@@ -6,6 +6,8 @@ import { Posts } from "../api/posts";
 import PostList from "./PostList";
 import PostAdd from "./PostAdd";
 
+import { Meteor } from 'meteor/meteor'
+
 class Stuff extends Component {
 
 
@@ -34,13 +36,11 @@ class Stuff extends Component {
 	onAdd(text) {
 		if (!text) return;
 		Posts.insert({
+			who: Meteor.user(), 
 			text,
 			voteCount:0,
 			votes:{
-				"🤡":0,
-				"😡":0,
-				"😇":0,
-				"🏊":0
+				"👍":0,
 			}
 		});
 

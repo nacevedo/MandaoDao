@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+
 export default class Post extends Component {
   constructor(props) {
     super(props);
@@ -30,6 +31,7 @@ export default class Post extends Component {
   render() {
     return (
       <div className="Post">
+        <div>{this.props.post.who.username}</div>
         <div>{this.props.post.text}</div>
         {this.renderVotes()}
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Autosuggest from 'react-autosuggest';
+import {Route, NavLink, HashRouter} from "react-router-dom";
 
 
 const cities = [
@@ -118,7 +119,7 @@ class Home extends Component {
 					renderSuggestion={renderSuggestion}
 					inputProps={inputProps} />
 					
-					<button onClick={this.onChangeCity.bind(this)} className="my-btn">GO</button>
+					<NavLink to="/city"><button onClick={this.onChangeCity.bind(this)} className="my-btn">GO</button></NavLink>
 				</div>
 				</div>
 				<p>You're new to a city? Come talk to people who know the city and easily get around!</p>
