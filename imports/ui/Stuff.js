@@ -34,13 +34,24 @@ class Stuff extends Component {
 	}
 
 	onAdd(text) {
+
+		// User exists ?? 
+
+		if (Meteor.userId() === null) 
+		{
+			console.log ("You are not registered ! Please sign in."); 
+			return; 
+		}
+
+
 		if (!text) return;
 		Posts.insert({
+			city: this.props.city, 
 			who: Meteor.user(), 
 			text,
 			voteCount:0,
 			votes:{
-				"👍":0,
+				"👍":0
 			}
 		});
 
@@ -51,16 +62,6 @@ class Stuff extends Component {
 	render() {
 		return (
 			<div>
-				<h2>{this.props.city}</h2>
-				<p>Mauris sem velit, vehicula eget sodales vitae,
-				rhoncus eget sapien:</p>
-				<ol>
-					<li>Nulla pulvinar diam</li>
-					<li>Facilisis bibendum</li>
-					<li>Vestibulum vulputate</li>
-					<li>Eget erat</li>
-					<li>Id porttitor</li>
-				</ol>
 				<PostList
 		          posts={this.props.posts}
 		          onVote={this.onVote.bind(this)}
@@ -81,9 +82,9 @@ Stuff.propTypes = {
 
 
 export default withTracker(
-  () => {
+  (x) => {
     return {
-      posts: Posts.find({}, {sort: {voteCount:-1}}).fetch()
+      posts: Posts.find({city : x.city}, {sort: {voteCount:-1}}).fetch()
     };
   }
 )(Stuff);

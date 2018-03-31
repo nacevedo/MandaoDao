@@ -22,7 +22,7 @@ export class App extends Component {
 
 
   onChangeCity(newCity){
-    console.log(this.props);
+    
     this.setState({
       city: newCity
     });
