@@ -13,12 +13,12 @@ export default class PostAdd extends Component {
     return (
       <div className="PostAdd">
 
-        <textarea type="text" placeholder="Tittle" ref="tittle"/>
+        <textarea type="text" placeholder="Tittle" ref="title"/>
         <textarea type="text" placeholder="Text" ref="text"/>
         <button
           onClick={
             () =>
-              this.props.onAdd(this.refs.tittle.value, this.refs.text.value)
+              this.props.onAdd(this.refs.title.value, this.refs.text.value)
           }
         >Add
         </button>
