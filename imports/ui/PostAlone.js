@@ -86,20 +86,15 @@ class Post extends Component {
     this.props.updatePostName(this.props.post.tittle);
   }
 
-  onChangePostID(){
-    this.props.updatePostID(this.props.post._id);
-  }
-
   render() {
     return (
       <div className="Post">
-      
+        <p>holaaaaa</p>
         <div>{this.props.post.who.username}</div>
         <div>{this.props.post.tittle}</div>
         <div>{this.props.post.text}</div>
         {this.renderVotes()}
 
-      <NavLink to="/post"><button onClick={(event) =>{this.onChangePost.bind(this); this.onChangePostID.bind(this);}} className="my-btn">Open the comments</button></NavLink>
       <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
       <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
 

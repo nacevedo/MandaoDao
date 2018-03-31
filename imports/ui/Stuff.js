@@ -67,6 +67,8 @@ class Stuff extends Component {
 				<PostList
 		          posts={this.props.posts}
 		          onVote={this.onVote.bind(this)}
+		          updatePostID={this.props.updatePostID.bind(this)} 
+		          updatePostName={this.props.updatePostName.bind(this)}
 		          >
         		</PostList>
 		        <PostAdd
