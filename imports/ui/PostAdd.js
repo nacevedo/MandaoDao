@@ -13,7 +13,7 @@ export default class PostAdd extends Component {
     return (
       <div className="PostAdd">
 
-        <textarea type="text" placeholder="Tittle" ref="title"/>
+        <textarea type="text" placeholder="Title" ref="title"/>
         <textarea type="text" placeholder="Text" ref="text"/>
         <button
           onClick={
