@@ -86,7 +86,7 @@ class Post extends Component {
     return (
       <div className="Post">
         <div>{this.props.post.who.username}</div>
-        <div>{this.props.post.tittle}</div>
+        <div>{this.props.post.title}</div>
         <div>{this.props.post.text}</div>
         {this.renderVotes()}
 
