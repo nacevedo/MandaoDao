@@ -33,13 +33,13 @@ class Stuff extends Component {
 			postObj);
 	}
 
-	onAdd(text) {
+	onAdd(tittle, text) {
 
 		// User exists ?? 
 
 		if (Meteor.userId() === null) 
 		{
-			console.log ("You are not registered ! Please sign in."); 
+			window.alert ("You are not registered ! Please sign in."); 
 			return; 
 		}
 
@@ -49,6 +49,7 @@ class Stuff extends Component {
 			city: this.props.city, 
 			who: Meteor.user(), 
 			text,
+			tittle:tittle, 
 			voteCount:0,
 			votes:{
 				"👍":0

@@ -88,9 +88,11 @@ class Post extends Component {
   render() {
     return (
       <div className="Post">
-      <div>{this.props.post.who.username}</div>
-      <div>{this.props.post.text}</div>
-      {this.renderVotes()}
+      
+        <div>{this.props.post.who.username}</div>
+        <div>{this.props.post.tittle}</div>
+        <div>{this.props.post.text}</div>
+        {this.renderVotes()}
 
       <button onClick={this.toggleModal.bind(this)}> Open the comments </button>
       <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
