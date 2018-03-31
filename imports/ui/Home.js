@@ -18,7 +18,7 @@ const cities = [
 	name: 'Puerto Carreño',
 },
 {
-	name: 'Vilavicencio',
+	name: 'Villavicencio',
 },
 {
 	name: 'Medellín',
