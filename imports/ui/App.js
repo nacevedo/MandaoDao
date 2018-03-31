@@ -16,7 +16,8 @@ export class App extends Component {
     super(props);
 
     this.state={
-      city: "City"
+      city: "City",
+      postName: ""
     };
   }
 
@@ -28,6 +29,12 @@ export class App extends Component {
     });
   }
 
+  onChangePost(newName){
+    
+    this.setState({
+      postName: newName
+    });
+  }
   render() {
     return (
       <HashRouter>
@@ -35,15 +42,17 @@ export class App extends Component {
         <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/city">{this.state.city}</NavLink></li>
+            <li><NavLink to="/post">{this.state.postName}</NavLink></li>
             <li id="sign-in-place"><AccountsUIWrapper /></li>
         </ul>
 
-        <h1><span className="fa">&#xf25b;</span>&nbsp; Questions & Answers</h1>
+        <h1><span className="fa">&#xf25b;</span>&nbsp; Mandao Dao</h1>
         <hr/>
 
         <div className="content">
             <Route exact path="/" render={()=> <Home updateCity={this.onChangeCity.bind(this)} />} />
             <Route path="/city/" render={()=> <Stuff city={this.state.city} />} />
+            <Route path="/post/" render={()=> <Post updatePostName={this.onChangePost.bind(this)} />} />
         </div>
         
       </div>

@@ -59,7 +59,7 @@ class Post extends Component {
 
   }
 
-    toggleModal() {
+  toggleModal() {
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -70,33 +70,37 @@ class Post extends Component {
     for (let emoji in this.props.post.votes) {
       res.push(
         <button
-          onClick={() =>
-            this.props.onVote(
-              this.props.post,
-              emoji
+        onClick={() =>
+          this.props.onVote(
+            this.props.post,
+            emoji
             )}
           key={emoji}>{emoji} {this.props.post.votes[emoji]}</button>
-      );
+          );
     }
     return res;
   }
 
+  onChangePost(){
+    this.props.updatePostName(this.state.title);
+  }
 
   render() {
     return (
       <div className="Post">
+      
         <div>{this.props.post.who.username}</div>
         <div>{this.props.post.tittle}</div>
         <div>{this.props.post.text}</div>
         {this.renderVotes()}
 
-        <button onClick={this.toggleModal.bind(this)}> Open the comments </button>
-        <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
-        <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
+      <button onClick={this.toggleModal.bind(this)}> Open the comments </button>
+      <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
+      <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
 
 
       </div>
-    );
+      );
   }
 }
 
@@ -113,4 +117,4 @@ export default withTracker(
       comments: Comments.find({post : x.post._id}, {sort: {voteCount:-1}}).fetch()
     };
   }
-)(Post);
+  )(Post);
