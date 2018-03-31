@@ -62,6 +62,7 @@ class Stuff extends Component {
 	render() {
 		return (
 			<div>
+				<h2>{this.props.city}</h2>
 				<PostList
 		          posts={this.props.posts}
 		          onVote={this.onVote.bind(this)}

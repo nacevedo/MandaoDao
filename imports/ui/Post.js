@@ -48,6 +48,7 @@ class Post extends Component {
     if (!text) return;
     Comments.insert({
       city: this.props.city, 
+      post: this.props.post._id,
       who: Meteor.user(), 
       text,
       voteCount:0,
@@ -108,7 +109,7 @@ export default withTracker(
   (x) => {
     console.log(x); 
     return {
-      comments: Comments.find({}, {sort: {voteCount:-1}}).fetch()
+      comments: Comments.find({post : x.post._id}, {sort: {voteCount:-1}}).fetch()
     };
   }
 )(Post);
