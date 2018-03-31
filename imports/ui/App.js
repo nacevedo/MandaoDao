@@ -9,6 +9,7 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
 import {Route, NavLink, HashRouter} from "react-router-dom";
 import Home from "./Home";
 import Stuff from "./Stuff";
+import Post from "./Post";
 
 
 export class App extends Component {
@@ -17,7 +18,8 @@ export class App extends Component {
 
     this.state={
       city: "City",
-      postName: ""
+      postName: "",
+      postID: ""
     };
   }
 
@@ -33,6 +35,14 @@ export class App extends Component {
     
     this.setState({
       postName: newName
+    });
+  }
+
+
+  onChangePostID(id){
+    
+    this.setState({
+      postID: id
     });
   }
   render() {
@@ -51,8 +61,10 @@ export class App extends Component {
 
         <div className="content">
             <Route exact path="/" render={()=> <Home updateCity={this.onChangeCity.bind(this)} />} />
-            <Route path="/city/" render={()=> <Stuff city={this.state.city} />} />
-            <Route path="/post/" render={()=> <Post updatePostName={this.onChangePost.bind(this)} />} />
+            <Route path="/city/" render={()=> <Stuff city={this.state.city} 
+                                                     updatePostID={this.onChangePostID.bind(this)} 
+                                                     updatePostName={this.onChangePost.bind(this)} />} />
+            <Route path="/post/" render={()=> <PostAlone postID={this.state.postID} />} />
         </div>
         
       </div>
