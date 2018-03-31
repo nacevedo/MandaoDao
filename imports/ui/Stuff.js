@@ -39,7 +39,7 @@ class Stuff extends Component {
 
 		if (Meteor.userId() === null) 
 		{
-			console.log ("You are not registered ! Please sign in."); 
+			window.alert ("You are not registered ! Please sign in."); 
 			return; 
 		}
 
