@@ -8,7 +8,7 @@ import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
 
-class Post extends Component {
+class PostAlone extends Component {
   constructor(props) {
     super(props);
 

@@ -87,6 +87,7 @@ class Post extends Component {
   }
 
   onChangePostID(){
+    console.log(this.props);
     this.props.updatePostID(this.props.post._id);
   }
 
@@ -99,7 +100,8 @@ class Post extends Component {
         <div>{this.props.post.text}</div>
         {this.renderVotes()}
 
-      <NavLink to="/post"><button onClick={(event) =>{this.onChangePost.bind(this); this.onChangePostID.bind(this);}} className="my-btn">Open the comments</button></NavLink>
+      <NavLink to="/post"><button onClick={this.onChangePostID.bind(this)} 
+                                  className="my-btn">Open the comments</button></NavLink>
       <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
       <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
 

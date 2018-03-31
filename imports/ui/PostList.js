@@ -17,7 +17,8 @@ export default class PostList extends Component {
       <Post
         onVote={this.props.onVote}
         key={i}
-        post={p}>
+        post={p}
+        updatePostID={this.props.updatePostID.bind(this)} >
       </Post>
     );
   }
