@@ -15,7 +15,7 @@ export default class PostAdd extends Component {
 
       <h4>Begin writing the favor you need help with</h4>
       <div>
-        <textarea id="title" type="text" placeholder="Title" ref="tittle"/>
+        <textarea id="title" type="text" placeholder="Title" ref="title"/>
         </div>
         <div>
         <textarea className="com-text" type="text" placeholder="Text" ref="text"/>

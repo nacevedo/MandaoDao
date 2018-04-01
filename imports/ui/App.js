@@ -58,7 +58,7 @@ export class App extends Component {
             <li id="sign-in-place"><AccountsUIWrapper /></li>
         </ul>
 
-        <h1><span className="fa">&#xf25b;</span>&nbsp; Mandao Dao</h1>
+        <h1><span className="fa">&#xf1d8;</span>&nbsp; Mandao Dao</h1>
         <hr/>
 
         <div className="content">
