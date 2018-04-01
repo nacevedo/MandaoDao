@@ -33,7 +33,7 @@ class Stuff extends Component {
 			postObj);
 	}
 
-	onAdd(tittle, text) {
+	onAdd(title, text) {
 
 		// User exists ?? 
 
@@ -49,7 +49,7 @@ class Stuff extends Component {
 			city: this.props.city, 
 			who: Meteor.user(), 
 			text,
-			tittle:tittle, 
+			title:title, 
 			voteCount:0,
 			votes:{
 				"👍":0

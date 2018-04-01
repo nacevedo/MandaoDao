@@ -10,6 +10,7 @@ import {Route, NavLink, HashRouter} from "react-router-dom";
 import Home from "./Home";
 import Stuff from "./Stuff";
 import Post from "./Post";
+import PostAlone from "./PostAlone";
 
 
 export class App extends Component {
@@ -44,6 +45,7 @@ export class App extends Component {
     this.setState({
       postID: id
     });
+
   }
   render() {
     return (
@@ -52,7 +54,7 @@ export class App extends Component {
         <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/city">{this.state.city}</NavLink></li>
-            <li><NavLink to="/post">{this.state.postName}</NavLink></li>
+            <li><NavLink to="/post">{this.state.postID}</NavLink></li>
             <li id="sign-in-place"><AccountsUIWrapper /></li>
         </ul>
 
