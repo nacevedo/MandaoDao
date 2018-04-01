@@ -6,15 +6,16 @@ import CommentAdd from './CommentAdd';
 import { Comments } from "../api/posts";
 import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
+import { Posts } from "../api/posts";
 
 
 class PostAlone extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { isOpen: false };
-
+    this.state = { isOpen: false 
   }
+}
 
   //This are the functions for comments 
   onVote(comment, emoji) {
@@ -104,9 +105,8 @@ class PostAlone extends Component {
   }
 }
 
-Post.propTypes = {
-  post: PropTypes.object.isRequired,
-  onVote: PropTypes.func.isRequired
+PostAlone.propTypes = {
+
 };
 
 
@@ -114,7 +114,8 @@ export default withTracker(
   (x) => {
     console.log(x); 
     return {
-      comments: Comments.find({post : x.post._id}, {sort: {voteCount:-1}}).fetch()
+      comments: Comments.find({post : x.postID}, {sort: {voteCount:-1}}).fetch(), 
+      post: Posts.findOne(x.postID)
     };
   }
-  )(Post);
+  )(PostAlone);
