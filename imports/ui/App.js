@@ -110,10 +110,10 @@ export class App extends Component {
                 <NavLink to="/post">{this.state.postID}</NavLink>
               </li>
               <li>
-                <NavLink to="/chat">el chat va acá</NavLink>
+                <NavLink to="/chat">Chats</NavLink>
               </li>
               <li>
-                <NavLink to="/chatchat">el chat solo va acá</NavLink>
+                <NavLink to="/chatchat">{this.state.user1} &nbsp; {this.state.user2}</NavLink>
               </li>
               <li id="sign-in-place" className="hidden-xs">
                 <AccountsUIWrapper />

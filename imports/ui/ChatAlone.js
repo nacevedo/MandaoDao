@@ -39,11 +39,11 @@ class ChatAlone extends Component {
 
   renderPosts() {
     return this.props.chatMessages.map((p,i) =>
-      <div className="col-sm-4">
-      <div className="box3">
+      <div >
+      
       <ChatMessage chatMessage = {p} key = {i} > </ChatMessage>
       </div>
-      </div>
+      
     );
   }
 
@@ -57,8 +57,10 @@ class ChatAlone extends Component {
       <div id="Chat">
  
 
-        <p> Chat members: {this.props.u1} & {this.props.u2} </p>
+        <h2> Chat members: {this.props.u1} & {this.props.u2} </h2>
+        <div id="chat-content">
         {this.renderPosts()}
+        </div>
         <ChatMessageAdd onAdd = {this.onAdd.bind(this)}> </ChatMessageAdd> 
 
       </div>
