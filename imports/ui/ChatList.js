@@ -14,11 +14,14 @@ class ChatList extends Component {
     };
   }
 
+  
   renderPosts() {
     return this.props.chats.map((p,i) =>
       <div className="col-sm-4">
       <div className="box3">
-      <Chat chat = {p} key = {i} > </Chat>
+      <Chat chat = {p} key = {i} updateChatID={this.props.updateChatID.bind(this)} 
+                                 updateUser1={this.props.updateUser1.bind(this)}
+                                 updateUser2={this.props.updateUser2.bind(this)} > </Chat>
       </div>
       </div>
     );

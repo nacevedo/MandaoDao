@@ -51,28 +51,28 @@ class Chat extends Component {
     );
   }
 
-  change()
-  {
-    if (this.props.chat === undefined)
-         {
-            this.props.chat = {}; 
-         }
+
+  onChangeChatID(){
+    this.props.updateChatID(this.props.chat._id);
   }
 
-  
+  onChangeUser1(){
+    this.props.updateUser1(this.props.chat.user1);
+  }
+
+  onChangeUser2(){
+    this.props.updateUser2(this.props.chat.user2);
+
+  }  
 
   render() {
-    var u1 = this.props.chat.user1;
-    console.log(u1);
-    console.log(this.props.chat);
+
     return (
       <div id="Chat">
-      { this.change()}
-
-      {console.log(this.props.chat.user1)}
-     <p> Chat members: {u1} & {this.props.chat.user2} </p>
-     {this.renderPosts()}
-      <ChatMessageAdd onAdd = {this.onAdd.bind(this)}> </ChatMessageAdd> 
+     <p> Chat members: {this.props.chat.user1} & {this.props.chat.user2} </p>
+     <NavLink to="/chatchat"> <button onClick={(event) => {this.props.updateChatID(this.props.chat._id);
+                                                      this.props.updateUser1(this.props.chat.user1);
+                                                      this.props.updateUser2(this.props.chat.user2);}}> Click for chat </button> </NavLink>
 
       </div>
       );
@@ -83,12 +83,4 @@ Chat.propTypes = {
   chat: PropTypes.object.isRequired
 };
 
-export default withTracker(
-  (props) => {
-  
-    return {
-      chatMessages: ChatMessages.find({chatId : props.chat._id}).fetch(), 
-      chat: props.chat
-    };
-  }
-)(Chat);
+export default(Chat);

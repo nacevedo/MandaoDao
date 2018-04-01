@@ -94,9 +94,10 @@ class ChatMessage extends Component {
   render() {
     return (
       <div id="Chat">
-      
-     <p> Este es un mensaje del chat </p>
-     
+      <p>
+      {this.props.chatMessage.user}:
+     {this.props.chatMessage.text}
+     </p>
 
       </div>
       );
