@@ -81,12 +81,8 @@ export class App extends Component {
         <div className="App">
           <div className="navbar-header">
             <div className="row">
-              <div className="col-xs-6">
-                <div data-target="sign-in-place" className="hidden-sm hidden-md hidden-lg">
-                  <AccountsUIWrapper />
-                </div>
-              </div>
-              <div className="col-xs-6">
+              
+            
                 <button type="button" 
                         className="navbar-toggle collapsed"
                         data-toggle="collapse" 
@@ -95,7 +91,7 @@ export class App extends Component {
                 <span className="sr-only">Toggle navigation</span>
                 <span className="fa">&#xf0c9;</span>
                 </button>
-              </div>
+              
             </div>
           </div>
           <div id="collapsable-nav" className="collapse navbar-collapse">
