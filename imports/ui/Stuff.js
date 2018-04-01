@@ -39,7 +39,7 @@ class Stuff extends Component {
 
 		if (Meteor.userId() === null) 
 		{
-			window.alert ("You are not registered ! Please sign in."); 
+			window.alert ("You are not registered! Please sign in."); 
 			return; 
 		}
 
@@ -62,8 +62,20 @@ class Stuff extends Component {
 
 	render() {
 		return (
-			<div>
-				<h2>{this.props.city}</h2>
+			<div id="stuff" className="row">
+				<h2 id="city-name">{this.props.city}</h2>
+				<hr/>
+				<div className="col-sm-3">
+				<div className="box2">
+			        <PostAdd
+			          onAdd={this.onAdd.bind(this)}
+			          >
+			        </PostAdd>
+			    </div>
+			    </div>
+				<div className="col-sm-9">
+				
+				<div className="row">
 				<PostList
 		          posts={this.props.posts}
 		          onVote={this.onVote.bind(this)}
@@ -71,10 +83,10 @@ class Stuff extends Component {
 		          updatePostName={this.props.updatePostName.bind(this)}
 		          >
         		</PostList>
-		        <PostAdd
-		          onAdd={this.onAdd.bind(this)}
-		          >
-		        </PostAdd>
+        		
+        		</div>
+        		</div>
+        		
 			</div>
 			);
 	}

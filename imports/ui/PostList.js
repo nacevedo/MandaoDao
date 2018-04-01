@@ -14,18 +14,22 @@ export default class PostList extends Component {
 
   renderPosts() {
     return this.props.posts.map((p,i) =>
+      <div className="col-sm-4">
+      <div className="box3">
       <Post
         onVote={this.props.onVote}
         key={i}
         post={p}
         updatePostID={this.props.updatePostID.bind(this)} >
       </Post>
+      </div>
+      </div>
     );
   }
   render() {
     return (
       <div className="PostList">
-        <h2>Posts:</h2>
+        
         {this.renderPosts()}
       </div>
     );

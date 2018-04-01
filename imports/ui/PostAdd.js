@@ -12,15 +12,19 @@ export default class PostAdd extends Component {
   render() {
     return (
       <div className="PostAdd">
-
-        <textarea type="text" placeholder="Tittle" ref="tittle"/>
-        <textarea type="text" placeholder="Text" ref="text"/>
-        <button
+      <h4>Begin writing the favor you need help with</h4>
+      <div>
+        <textarea id="title" type="text" placeholder="Title" ref="tittle"/>
+        </div>
+        <div>
+        <textarea className="com-text" type="text" placeholder="Text" ref="text"/>
+        </div>
+        <button className="my-btn-2"
           onClick={
             () =>
               this.props.onAdd(this.refs.tittle.value, this.refs.text.value)
           }
-        >Add
+        >New Favor
         </button>
       </div>
     );
