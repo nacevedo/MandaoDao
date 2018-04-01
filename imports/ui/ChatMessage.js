@@ -66,20 +66,24 @@ class ChatMessage extends Component {
     });
   }
 
-  renderVotes() {
-    let res=[];
-    for (let emoji in this.props.post.votes) {
-      res.push(
-        <button className="my-btn-4"
-        onClick={() =>
-          this.props.onVote(
-            this.props.post,
-            emoji
-            )}
-          key={emoji}>{emoji} {this.props.post.votes[emoji]}</button>
-          );
+
+
+  renderMessage(){
+
+    if(Meteor.user().username == this.props.chatMessage.user){
+      return(
+      <div className="my-message">
+      
+        <p>{this.props.chatMessage.user}: {this.props.chatMessage.text}</p>
+      
+      </div>)
     }
-    return res;
+    else{
+      return(
+      <div className="other-message">
+        <p>{this.props.chatMessage.user}: {this.props.chatMessage.text}</p>
+      </div>)
+    }
   }
 
   onChangePost(){
@@ -94,11 +98,8 @@ class ChatMessage extends Component {
   render() {
     return (
       <div id="Chat">
-      <p>
-      {this.props.chatMessage.user}:
-     {this.props.chatMessage.text}
-     </p>
-
+      
+        {this.renderMessage()}
       </div>
       );
   }

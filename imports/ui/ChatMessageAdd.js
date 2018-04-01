@@ -9,28 +9,30 @@ export default class ChatAdd extends Component {
 
     };
 
-        clearContents(element) {
-    this.refs.text.value = ''; 
   }
 
+
+  clearContents(element) {
+    this.refs.text.value = '';
   }
+
   render() {
     return (
-      <div className="PostAdd">
-        <textarea className="com-text" type="text" placeholder="Text" ref="text"/>
-        <button className="my-btn-2"
+      <div id="ChatMessageAdd">
+      <textarea className="com-text-2" type="text" placeholder="What message do you want to send?" ref="text"/>
+      <button className="my-btn-2"
 
-          onClick={
-            () =>
-            {
-              this.props.onAdd(this.refs.text.value);
-              this.clearContents(this);
-            }
-          }
-        > Send message
-        </button>
+      onClick={
+        () =>
+        {
+          this.props.onAdd(this.refs.text.value);
+          this.clearContents(this);
+        }
+      }
+      > Send message
+      </button>
       </div>
-    );
+      );
   }
 }
 

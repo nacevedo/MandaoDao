@@ -433,7 +433,54 @@ div.static-likes{
 	padding: 10px;
 }
 
+/*Messaging style*/
 
+.my-message{
+	background-color: rgba(255,179,53,0.7);
+	margin: 0px;
+	margin-bottom: 7px;
+	padding: 10px;
+	float: right;
+	clear: both;
+	border-radius: 5px;
+}
+
+.other-message{
+	background-color: rgba(252,254,253,0.7);
+	margin: 0px;
+	margin-bottom: 7px;
+	padding: 10px;
+	float: left;
+	clear: both;
+	border-radius: 5px;
+}
+
+#Chat {
+	padding-right: 40px; 
+	padding-left: 40px;
+}
+
+#Chat h2{
+	text-align: center;
+    color: #fcfefd;
+    font-family: 'Bitter', serif;
+    margin-bottom: 20px;
+}
+
+.com-text-2 {
+	width: 100%;
+	height: 50px;
+	border: none;
+}
+
+#ChatMessageAdd {
+	padding: 40px; 
+}
+
+#chat-content {
+	border-radius: 1px;
+	background-color: rgba(30,74,74,0.05);
+}
 
 
 /********** Large devices only **********/
@@ -559,6 +606,12 @@ div.static-likes{
 		padding-top: 5px;
 	}
 
+/*Messages*/
+
+	#Chat {
+		padding-right: 0px; 
+		padding-left: 0px;
+	}
 
 }
 
