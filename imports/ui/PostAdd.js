@@ -18,7 +18,7 @@ export default class PostAdd extends Component {
         <textarea id="title" type="text" placeholder="Title" ref="title"/>
         </div>
         <div>
-        <textarea className="com-text" type="text" placeholder="Text" ref="text"/>
+        <textarea className="com-text" type="text" placeholder="Type a description of the favor you need help with" ref="text"/>
         </div>
         <button className="my-btn-2"
 

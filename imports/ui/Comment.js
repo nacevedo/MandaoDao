@@ -29,9 +29,10 @@ export default class Comment extends Component {
 
   render() {
     return (
-      <div className="Comment">
-      <div className="box">
+      <div id="Comment">
+      <div className="box3">
         <div><span className="fa">&#xf007;</span>&nbsp;{this.props.comment.who.username}</div>
+        <hr/>
         <div>{this.props.comment.text}</div>
         {this.renderVotes()}
         </div>

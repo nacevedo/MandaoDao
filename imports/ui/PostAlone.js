@@ -79,30 +79,29 @@ class PostAlone extends Component {
   }
 
   onChangePost(){
-    this.props.updatePostName(this.props.post.tittle);
+    this.props.updatePostName(this.props.post.title);
   }
 
   render() {
     return (
       <div id="PostAlone">
-      <div className="col-sm-4">
-      <div className="box4">
-      <div id="pa">
-        <div><span className="fa">&#xf007;</span>&nbsp;{this.props.post.who.username}</div>
-        <hr/>
-        <div id="pTitle"><span>{this.props.post.tittle}</span></div>
-        <div>{this.props.post.text}</div>
-        {this.renderVotes()}
-</div>
-</div>
-<div className="box2">
-<CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
-</div>
-</div>
-<div className="col-sm-8">
-      <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
-      
-</div>
+        <div className="col-sm-4">
+          <div className="box4">
+            <div id="pa">
+              <div><span className="fa">&#xf007;</span>&nbsp;{this.props.post.who.username}</div>
+              <hr/>
+              <div id="pTitle"><span>{this.props.post.title}</span></div>
+              <div>{this.props.post.text}</div>
+              {this.renderVotes()}
+            </div>
+          </div>
+          <div className="box2">
+            <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd>
+          </div>
+        </div>
+        <div className="col-sm-8">
+          <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
+        </div>
       </div>
       );
   }
