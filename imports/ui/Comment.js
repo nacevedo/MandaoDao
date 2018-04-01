@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Modal from './Modal';
+import {Route, NavLink, HashRouter} from "react-router-dom";
+
+import { Chats } from "../api/posts";
 
 
 export default class Comment extends Component {
@@ -26,13 +29,30 @@ export default class Comment extends Component {
     return res;
   }
 
+  addChat ()
+  {
+        if (Meteor.userId() === null) 
+    {
+      window.alert ("You are not registered! Please sign in."); 
+      return; 
+    }
+    console.log(Meteor.user); 
+
+    Chats.insert({
+      user1: Meteor.user().username,  
+      user2: this.props.comment.who.username
+    });
+  }
+
 
   render() {
     return (
       <div id="Comment">
       <div className="box3">
         <div><span className="fa">&#xf007;</span>&nbsp;{this.props.comment.who.username}</div>
+        <NavLink exact to="/chat"> <button onClick = {this.addChat.bind(this)}> Chat </button> </NavLink>
         <hr/>
+        
         <div>{this.props.comment.text}</div>
         {this.renderVotes()}
         </div>
