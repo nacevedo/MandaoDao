@@ -312,6 +312,14 @@ ul.header li a {
 	font-size: 1.2em;
 }
 
+h2#cf{
+
+	text-align: center;
+	color: #fcfefd;
+	font-family: 'Bitter', serif;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
 
 /*Button style */
 

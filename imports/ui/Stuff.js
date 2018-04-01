@@ -74,7 +74,8 @@ class Stuff extends Component {
 			    </div>
 			    </div>
 				<div className="col-sm-9">
-				
+				<h2 id="cf">Community&#39;s Favors</h2>
+				<hr/>
 				<div className="row">
 				<PostList
 		          posts={this.props.posts}
