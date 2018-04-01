@@ -105,12 +105,10 @@ class Post extends Component {
 <div className="col-sm-6">
 
       <NavLink to="/post"><button onClick={this.onChangePostID.bind(this)} 
-                                  className="my-btn-3">Open the comments</button></NavLink>
+                                  className="my-btn-3">Comment</button></NavLink>
       </div>
 </div>
-      <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
-      <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
-
+     
 
       </div>
       );
