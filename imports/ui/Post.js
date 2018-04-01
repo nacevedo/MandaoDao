@@ -101,8 +101,8 @@ class Post extends Component {
         <div id="pTitle"><span>{this.props.post.title}</span></div>
         <div >{this.props.post.text}</div>
         <div className="row">
-       <div className="col-sm-6"> {this.renderVotes()} </div>
-<div className="col-sm-6">
+       <div className="col-xs-6"> {this.renderVotes()} </div>
+<div className="col-xs-6">
 
       <NavLink to="/post"><button onClick={this.onChangePostID.bind(this)} 
                                   className="my-btn-3">Comment</button></NavLink>

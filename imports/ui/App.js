@@ -52,14 +52,28 @@ export class App extends Component {
     return (
       <HashRouter>
       <div className="App">
-        <ul className="header">
+      <div className="navbar-header">
+        <div className="row">
+        <div className="col-xs-6">
+        <div data-target="sign-in-place" className="hidden-sm hidden-md hidden-lg"><AccountsUIWrapper /></div>
+        </div>
+        <div className="col-xs-6">
+        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="fa">&#xf0c9;</span>
+        </button>
+        </div>
+        </div>
+      </div>
+        <div id="collapsable-nav" className="collapse navbar-collapse">
+        <ul id="nav-list" className="header ">
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/city">{this.state.city}</NavLink></li>
             <li><NavLink to="/post">{this.state.postID}</NavLink></li>
             <li><NavLink to="/chat">el chat va acá</NavLink></li>
-            <li id="sign-in-place"><AccountsUIWrapper /></li>
+            <li id="sign-in-place" className="hidden-xs"><AccountsUIWrapper /></li>
         </ul>
-
+</div>
         <h1><span className="fa">&#xf1d8;</span>&nbsp; Mandao Dao</h1>
         <hr/>
 

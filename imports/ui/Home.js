@@ -123,6 +123,12 @@ class Home extends Component {
 				<p>You&#39;re new to a city? Come talk to people who know the city and easily get around!</p>
 				<p>We want to create a community of people that can help each other with what they have to offer. 
 				So don't doubt to find help here and to meet new people.</p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
+				<p> </p>
 			</div>
 			);
 	}
