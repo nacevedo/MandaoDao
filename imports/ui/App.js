@@ -11,6 +11,7 @@ import Home from "./Home";
 import Stuff from "./Stuff";
 import Post from "./Post";
 import PostAlone from "./PostAlone";
+import ChatPage from "./ChatPage";
 
 
 export class App extends Component {
@@ -55,6 +56,7 @@ export class App extends Component {
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/city">{this.state.city}</NavLink></li>
             <li><NavLink to="/post">{this.state.postID}</NavLink></li>
+            <li><NavLink to="/chat">el chat va acá</NavLink></li>
             <li id="sign-in-place"><AccountsUIWrapper /></li>
         </ul>
 
@@ -67,6 +69,7 @@ export class App extends Component {
                                                      updatePostID={this.onChangePostID.bind(this)} 
                                                      updatePostName={this.onChangePost.bind(this)} />} />
             <Route path="/post/" render={()=> <PostAlone postID={this.state.postID} />} />
+            <Route path="/chat/" render={()=> <ChatPage />} />
         </div>
         
       </div>

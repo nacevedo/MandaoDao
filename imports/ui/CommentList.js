@@ -24,7 +24,8 @@ export default class CommentList extends Component {
   render() {
     return (
       <div className="CommentList">
-        <h2>Comments: </h2>
+        <h2 id="city-name">Comments</h2>
+        <hr/>
         {this.renderPosts()}
       </div>
     );

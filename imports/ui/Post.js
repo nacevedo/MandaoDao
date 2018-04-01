@@ -70,7 +70,7 @@ class Post extends Component {
     let res=[];
     for (let emoji in this.props.post.votes) {
       res.push(
-        <button className="my-btn-3"
+        <button className="my-btn-4"
         onClick={() =>
           this.props.onVote(
             this.props.post,

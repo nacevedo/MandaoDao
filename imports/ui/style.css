@@ -107,7 +107,12 @@ div#login-buttons-open-change-password.login-button:hover{
     text-decoration: none;
 }
 
-#login-buttons input[type=text], .accounts-dialog input[type=text], #login-buttons input[type=email], .accounts-dialog input[type=email], #login-buttons input[type=password], .accounts-dialog input[type=password] {
+#login-buttons input[type=text], 
+.accounts-dialog input[type=text], 
+#login-buttons input[type=email], 
+.accounts-dialog input[type=email], 
+#login-buttons input[type=password], 
+.accounts-dialog input[type=password] {
     padding: 4px;
     border: 0px;
     border-radius: 0px;
@@ -299,6 +304,7 @@ ul.header li a {
 #pTitle span{
 	font-weight: bold;
 	padding-bottom: 15px;
+	font-size: 1.2em;
 }
 
 
@@ -355,7 +361,6 @@ ul.header li a {
 	height: 40px;
 	width: 100%;
 	border: none;
-	font-weight: bold;
 	font-size: 12px;
 	color: #fcfefd;
 	border-radius: 25px;
@@ -364,4 +369,54 @@ ul.header li a {
 
 .my-btn-3:hover {
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+.my-btn-4{
+
+	justify-content: center;
+	align-items: center;
+	background-color: #FB3453;
+	margin: 10px;
+	padding: 5px 20px;
+	height: 40px;
+	width: 92px;
+	border: none;
+	font-weight: bold;
+	font-size: 16px;
+	color: #fcfefd;
+	border-radius: 25px;
+
+}
+
+.my-btn-4:hover {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+
+/*Comments styles*/
+
+#static-likes span{
+	
+	background-color: rgba(30,74,74,0.5);
+	margin: 10px;
+	padding: 0 20px;
+	border: none;
+	font-weight: bold;
+	font-size: 40px;
+	color: #fcfefd;
+	border-radius: 0px;
+}
+
+#PostAlone hr{
+	width: 40%;
+}
+
+#pa{
+	text-align: center;
+}
+
+.box4{
+	background-color: rgba(30,74,74,0.2);
+	margin: 30px 0px;
+	padding: 10px;
 }

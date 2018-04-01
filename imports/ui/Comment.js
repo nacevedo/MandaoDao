@@ -5,19 +5,16 @@ import Modal from './Modal';
 
 export default class Comment extends Component {
   constructor(props) {
-    super(props);
-
-    
+    super(props); 
 
   }
-
 
 
   renderVotes() {
     let res=[];
     for (let emoji in this.props.comment.votes) {
       res.push(
-        <button
+        <button className="my-btn-4"
           onClick={() =>
             this.props.onVote(
               this.props.comment,
@@ -33,10 +30,11 @@ export default class Comment extends Component {
   render() {
     return (
       <div className="Comment">
-        <div>{this.props.comment.who.username}</div>
+      <div className="box">
+        <div><span className="fa">&#xf007;</span>&nbsp;{this.props.comment.who.username}</div>
         <div>{this.props.comment.text}</div>
         {this.renderVotes()}
-
+        </div>
       </div>
     );
   }

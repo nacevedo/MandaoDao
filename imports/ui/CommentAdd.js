@@ -12,11 +12,15 @@ export default class CommentAdd extends Component {
   render() {
     return (
       <div className="PostAdd">
+        <div >
+        <h4>Give a piece of advice to this person in our community and make their day better</h4>
         <textarea
+          className="com-text"
           type="text"
           placeholder="Text"
           ref="text"/>
-        <button
+          </div>
+        <button className="my-btn-2"
           onClick={
             () =>
               this.props.onAdd(this.refs.text.value)
