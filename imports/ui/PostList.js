@@ -20,7 +20,8 @@ export default class PostList extends Component {
         onVote={this.props.onVote}
         key={i}
         post={p}
-        updatePostID={this.props.updatePostID.bind(this)} >
+        updatePostID={this.props.updatePostID.bind(this)}
+        updatePostName = {this.props.updatePostName.bind(this)} >
       </Post>
       </div>
       </div>

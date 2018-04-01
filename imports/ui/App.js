@@ -107,7 +107,7 @@ export class App extends Component {
                 <NavLink to="/city">{this.state.city}</NavLink>
               </li>
               <li>
-                <NavLink to="/post">{this.state.postID}</NavLink>
+                <NavLink to="/post">{this.state.postName}</NavLink>
               </li>
               <li>
                 <NavLink to="/chat">Chats</NavLink>

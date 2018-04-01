@@ -87,7 +87,7 @@ class Post extends Component {
   }
 
   onChangePostID(){
-    console.log(this.props);
+    console.log(this.props.post._id);
     this.props.updatePostID(this.props.post._id);
   }
 
@@ -101,11 +101,11 @@ class Post extends Component {
         <div id="pTitle"><span>{this.props.post.title}</span></div>
         <div >{this.props.post.text}</div>
         <div className="row">
-       <div className="col-xs-6"> {this.renderVotes()} </div>
-<div className="col-xs-6">
+       <div className="col-sm-6"> {this.renderVotes()} </div>
+<div className="col-sm-6">
 
-      <NavLink to="/post"><button onClick={this.onChangePostID.bind(this)} 
-                                  className="my-btn-3">Comment</button></NavLink>
+      <NavLink to="/post"><button className="my-btn-3" onClick={(event) => {this.props.updatePostID(this.props.post._id); this.props.updatePostName(this.props.post.title);} }
+                                  >Comment</button></NavLink>
       </div>
 </div>
      
@@ -115,10 +115,7 @@ class Post extends Component {
   }
 }
 
-Post.propTypes = {
-  post: PropTypes.object.isRequired,
-  onVote: PropTypes.func.isRequired
-};
+
 
 
 export default withTracker(
