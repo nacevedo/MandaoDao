@@ -9,13 +9,18 @@ export default class PostAdd extends Component {
 
     };
   }
+  clearContents(element) {
+    this.refs.title.value = '';
+    this.refs.text.value = ''; 
+  }
+
   render() {
     return (
       <div className="PostAdd">
 
       <h4>Begin writing the favor you need help with</h4>
       <div>
-        <textarea id="title" type="text" placeholder="Title" ref="title"/>
+        <textarea id="title" type="text" placeholder="Favor&#39;s Title" ref="title"/>
         </div>
         <div>
         <textarea className="com-text" type="text" placeholder="Type a description of the favor you need help with" ref="text"/>
@@ -23,8 +28,11 @@ export default class PostAdd extends Component {
         <button className="my-btn-2"
 
           onClick={
-            () =>
-              this.props.onAdd(this.refs.title.value, this.refs.text.value)
+            () => 
+            {
+              this.props.onAdd(this.refs.title.value, this.refs.text.value);
+              this.clearContents(this);
+            }
           }
         >New Favor
         </button>
