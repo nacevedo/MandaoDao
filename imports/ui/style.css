@@ -35,6 +35,17 @@
 	padding-bottom: 7px;
 }
 
+#title {
+  width: 100%;
+  height: 30px;
+  border: none;
+}
+
+.com-text {
+  width: 100%;
+  height: 150px;
+  border: none;
+}
 /*Login button style*/
 
 a#login-name-link.login-link-text, a#login-sign-in-link.login-link-text{
@@ -234,11 +245,61 @@ ul.header li a {
 	padding: 20px; 
 }
 
-#box{
+.box{
 	background-color: rgba(30,74,74,0.2);
 	margin: 30px;
 	padding: 10px;
 }
+
+/* PostList styles */ 
+
+#posts-title{
+	margin-top: 0px;
+	text-align: center;
+}
+
+/*Stuff styles*/
+#stuff hr {
+
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 2%;
+	padding-bottom: 40px;
+}
+
+#city-name{
+
+	text-align: center;
+	color: #fcfefd;
+	font-family: 'Bitter', serif;
+	margin-bottom: 20px;
+}
+
+.box2{
+	background-color: rgba(255,179,53,0.5);
+	margin: 0px;
+	padding: 35px 15px;
+
+}
+
+
+.box3{
+	background-color: rgba(30,74,74,0.2);
+	padding: 8px;
+}
+
+/* Post style */
+
+#Post hr {
+	width: 90%;
+	padding-bottom: 5px;
+}
+
+#pTitle span{
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
 
 /*Button style */
 
@@ -260,5 +321,46 @@ ul.header li a {
 }
 
 .my-btn:hover {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+.my-btn-2 {
+
+	justify-content: center;
+	align-items: center;
+	background-color: #FB3453;
+	padding: 0 20px;
+	height: 40px;
+	width: 100%;
+	border: none;
+	font-weight: bold;
+	font-size: 16px;
+	color: #fcfefd;
+	border-radius: 25px;
+
+}
+
+.my-btn-2:hover {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+.my-btn-3 {
+
+	justify-content: center;
+	align-items: center;
+	background-color: #FB3453;
+	margin-top: 10px;
+	padding: 0 20px;
+	height: 40px;
+	width: 100%;
+	border: none;
+	font-weight: bold;
+	font-size: 12px;
+	color: #fcfefd;
+	border-radius: 25px;
+
+}
+
+.my-btn-3:hover {
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
 }

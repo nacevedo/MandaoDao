@@ -104,7 +104,7 @@ class Home extends Component {
 
 		return (
 			<div id="home-city">
-				<div id="box">
+				<div className="box">
 					<h2>Please select the city you are in</h2>
 					<div id="chooser">
 					<h4>You can then begin to ask the questions you need</h4>

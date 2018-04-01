@@ -70,7 +70,7 @@ class Post extends Component {
     let res=[];
     for (let emoji in this.props.post.votes) {
       res.push(
-        <button
+        <button className="my-btn-3"
         onClick={() =>
           this.props.onVote(
             this.props.post,
@@ -93,15 +93,21 @@ class Post extends Component {
 
   render() {
     return (
-      <div className="Post">
+      <div id="Post">
       
-        <div>{this.props.post.who.username}</div>
-        <div>{this.props.post.title}</div>
-        <div>{this.props.post.text}</div>
-        {this.renderVotes()}
+
+        <div><span className="fa">&#xf007;</span>&nbsp;{this.props.post.who.username}</div>
+        <hr/>
+        <div id="pTitle"><span>{this.props.post.tittle}</span></div>
+        <div >{this.props.post.text}</div>
+        <div className="row">
+       <div className="col-sm-6"> {this.renderVotes()} </div>
+<div className="col-sm-6">
 
       <NavLink to="/post"><button onClick={this.onChangePostID.bind(this)} 
-                                  className="my-btn">Open the comments</button></NavLink>
+                                  className="my-btn-3">Open the comments</button></NavLink>
+      </div>
+</div>
       <CommentList comments={this.props.comments} onVote={this.onVote.bind(this)}> </CommentList>
       <CommentAdd onAdd={this.onAdd.bind(this)} > </CommentAdd> 
 
