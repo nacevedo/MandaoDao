@@ -8,7 +8,13 @@ export default class CommentAdd extends Component {
     this.state={
 
     };
+
   }
+
+      clearContents(element) {
+    this.refs.text.value = ''; 
+  }
+  
   render() {
     return (
       <div className="PostAdd">
@@ -17,13 +23,16 @@ export default class CommentAdd extends Component {
         <textarea
           className="com-text"
           type="text"
-          placeholder="Text"
+          placeholder="Help someone typing your comment"
           ref="text"/>
           </div>
         <button className="my-btn-2"
           onClick={
             () =>
-              this.props.onAdd(this.refs.text.value)
+              {
+              this.props.onAdd(this.refs.text.value);
+              this.clearContents(this);
+              }
           }
         >Add
         </button>

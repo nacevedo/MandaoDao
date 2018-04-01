@@ -8,6 +8,11 @@ export default class ChatAdd extends Component {
     this.state={
 
     };
+
+        clearContents(element) {
+    this.refs.text.value = ''; 
+  }
+
   }
   render() {
     return (
@@ -17,7 +22,10 @@ export default class ChatAdd extends Component {
 
           onClick={
             () =>
-              this.props.onAdd(this.refs.text.value)
+            {
+              this.props.onAdd(this.refs.text.value);
+              this.clearContents(this);
+            }
           }
         > Send message
         </button>
