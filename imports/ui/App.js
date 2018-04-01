@@ -11,7 +11,7 @@ import Home from "./Home";
 import Stuff from "./Stuff";
 import Post from "./Post";
 import PostAlone from "./PostAlone";
-import ChatPage from "./ChatPage";
+import ChatList from "./ChatList";
 
 
 export class App extends Component {
@@ -69,7 +69,7 @@ export class App extends Component {
                                                      updatePostID={this.onChangePostID.bind(this)} 
                                                      updatePostName={this.onChangePost.bind(this)} />} />
             <Route path="/post/" render={()=> <PostAlone postID={this.state.postID} />} />
-            <Route path="/chat/" render={()=> <ChatPage />} />
+            <Route path="/chat/" render={()=> <ChatList />} />
         </div>
         
       </div>
