@@ -54,10 +54,11 @@ class ChatAlone extends Component {
 
     console.log(this.props);
     return (
-      <div id="Chat">
+      <div id="ChatAlone">
  
 
         <h2> Chat members: {this.props.u1} & {this.props.u2} </h2>
+        <hr/>
         <div id="chat-content">
         {this.renderPosts()}
         </div>

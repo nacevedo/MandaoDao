@@ -70,9 +70,9 @@ class Chat extends Component {
     return (
       <div id="Chat">
      <p> Chat members: {this.props.chat.user1} & {this.props.chat.user2} </p>
-     <NavLink to="/chatchat"> <button onClick={(event) => {this.props.updateChatID(this.props.chat._id);
+     <NavLink to="/chatchat"> <button className="my-btn-2" onClick={(event) => {this.props.updateChatID(this.props.chat._id);
                                                       this.props.updateUser1(this.props.chat.user1);
-                                                      this.props.updateUser2(this.props.chat.user2);}}> Click for chat </button> </NavLink>
+                                                      this.props.updateUser2(this.props.chat.user2);}}> Click to chat </button> </NavLink>
 
       </div>
       );

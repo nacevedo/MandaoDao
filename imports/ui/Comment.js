@@ -49,8 +49,12 @@ export default class Comment extends Component {
     return (
       <div id="Comment">
       <div className="box3">
-        <div><span className="fa">&#xf007;</span>&nbsp;{this.props.comment.who.username}</div>
-        <NavLink exact to="/chat"> <button onClick = {this.addChat.bind(this)}> Chat </button> </NavLink>
+        <div className="row">
+        <div className="col-sm-4"><span className="fa">&#xf007;</span>&nbsp;{this.props.comment.who.username}</div>
+        <div className="col-sm-8">
+        <NavLink exact to="/chat"> <button className="my-btn-5" onClick = {this.addChat.bind(this)}> New chat with {this.props.comment.who.username}</button> </NavLink>
+        </div>
+        </div>
         <hr/>
         
         <div>{this.props.comment.text}</div>

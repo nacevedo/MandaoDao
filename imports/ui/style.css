@@ -398,6 +398,24 @@ ul.header li a {
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
 }
 
+.my-btn-5{
+
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(251,52,83,0.7);
+	padding: 5px 20px;
+	min-width: 150px;
+	border: none;
+	font-size: 14px;
+	color: #fcfefd;
+	border-radius: 25px;
+
+}
+
+.my-btn-5:hover {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
 
 /*Comments styles*/
 
@@ -455,16 +473,22 @@ div.static-likes{
 	border-radius: 5px;
 }
 
-#Chat {
-	padding-right: 40px; 
-	padding-left: 40px;
+#ChatAlone {
+	padding-right: 120px; 
+	padding-left: 120px;
 }
 
-#Chat h2{
+#ChatAlone h2{
 	text-align: center;
     color: #fcfefd;
     font-family: 'Bitter', serif;
     margin-bottom: 20px;
+}
+
+#ChatAlone hr{
+	width: 100%;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .com-text-2 {
@@ -473,13 +497,10 @@ div.static-likes{
 	border: none;
 }
 
-#ChatMessageAdd {
-	padding: 40px; 
-}
 
 #chat-content {
 	border-radius: 1px;
-	background-color: rgba(30,74,74,0.05);
+	background-color: rgba(30,74,74,0.5);
 }
 
 
@@ -612,7 +633,9 @@ div.static-likes{
 		padding-right: 0px; 
 		padding-left: 0px;
 	}
-
+	#ChatMessageAdd {
+		padding: 0px; 
+	}
 }
 
 
