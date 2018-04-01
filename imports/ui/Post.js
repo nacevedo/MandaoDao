@@ -83,7 +83,7 @@ class Post extends Component {
   }
 
   onChangePost(){
-    this.props.updatePostName(this.props.post.tittle);
+    this.props.updatePostName(this.props.post.title);
   }
 
   onChangePostID(){
@@ -98,7 +98,7 @@ class Post extends Component {
 
         <div><span className="fa">&#xf007;</span>&nbsp;{this.props.post.who.username}</div>
         <hr/>
-        <div id="pTitle"><span>{this.props.post.tittle}</span></div>
+        <div id="pTitle"><span>{this.props.post.title}</span></div>
         <div >{this.props.post.text}</div>
         <div className="row">
        <div className="col-sm-6"> {this.renderVotes()} </div>
