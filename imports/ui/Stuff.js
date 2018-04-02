@@ -67,7 +67,7 @@ class Stuff extends Component {
 				<hr/>
 				<div className="col-sm-3">
 				<div className="box2">
-			        <PostAdd
+			        <PostAdd key = {1}
 			          onAdd={this.onAdd.bind(this)}
 			          >
 			        </PostAdd>
@@ -78,6 +78,7 @@ class Stuff extends Component {
 				<hr/>
 				<div className="row">
 				<PostList
+					key = {45}
 		          posts={this.props.posts}
 		          onVote={this.onVote.bind(this)}
 		          updatePostID={this.props.updatePostID.bind(this)} 
