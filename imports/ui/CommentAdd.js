@@ -24,7 +24,7 @@ export default class CommentAdd extends Component {
           className="com-text"
           type="text"
           placeholder="Help someone typing your comment"
-          alt="Help someone typing your comment"
+          aria-label="Help someone typing your comment"
           role="textbox"
           ref="text"/>
           </div>

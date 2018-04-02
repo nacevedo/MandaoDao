@@ -20,10 +20,10 @@ export default class PostAdd extends Component {
 
       <h4>Begin writing the favor you need help with</h4>
       <div>
-        <textarea id="title" type="text" role="textbox"  placeholder="Favor&#39;s Title" alt="Favor&#39;s Title" ref="title"/>
+        <textarea id="title" type="text" role="textbox"  placeholder="Favor&#39;s Title" aria-label="Favor&#39;s Title" ref="title"/>
         </div>
         <div>
-        <textarea className="com-text" role="textbox" type="text" placeholder="Type a description of the favor you need help with" alt="Type a description of the favor you need help with" ref="text"/>
+        <textarea className="com-text" role="textbox" type="text" placeholder="Type a description of the favor you need help with" aria-label="Type a description of the favor you need help with" ref="text"/>
         </div>
         <button className="my-btn-2"
 
