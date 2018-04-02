@@ -8,6 +8,8 @@ Just enter to the app register yourself and create a new favor in your current c
 **Do you want to help people who are new to your city?**
 Enter to the webpage and search for your city, see the favors people have post. If there's one you can help with don't hesitate to sign in put a comment, people can use your advise to improve their experience in your city. You can also offer your services to someone with an specific need or problem, so you can make some extra pennies for your milkshake! 😜
 
+# Deployment:
+Currently our app is hosted in heroku. Please check it out .. [click here!](https://mandaodao.herokuapp.com/#/)
 
 # Usage:
 
