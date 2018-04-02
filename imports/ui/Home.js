@@ -115,7 +115,8 @@ class Home extends Component {
 						onSuggestionsClearRequested={this.onSuggestionsClearRequested}
 						getSuggestionValue={getSuggestionValue}
 						renderSuggestion={renderSuggestion}
-						inputProps={inputProps} />
+						inputProps={inputProps}
+						aria-label="Autosuggest for cities" />
 						
 						<NavLink to="/city"><button onClick={this.onChangeCity.bind(this)} className="my-btn">GO</button></NavLink>
 					</div>
