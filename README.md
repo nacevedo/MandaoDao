@@ -1,3 +1,4 @@
+<img src="https://raw.githubusercontent.com/nacevedo/MandaoDao/master/client/img/logo.png" title="Sakana" alt="Mandao Dao Logo" href="">
 # Mandao Dao
 
 Mandao Dao is a web aplication to help people who are new to a city to connect with citizens to help them to solve problems or needs!
