@@ -20,12 +20,15 @@ meteor
 ## Motivation
 This is a project for a [web development class](http://johnguerra.co/classes/webDevelopment_spring_2018/) in [Uniandes](https://www.uniandes.edu.co). The objective is to make a quick project using **Meteor with React**.
 
+## Contributing
+If anyone wants to give me any help or ideas, you can by making new [Issues](https://github.com/nacevedo/MandaoDao/issues) or a [Pull requests](https://github.com/nacevedo/MandaoDao/pulls).
+
 # Authors 
 Bibiana Gamba 👩🏽‍🎨
 Nicolás Acevedo 👨🏼‍🔬
-Beta versión! Please write use to include your city 😉...
+Beta versión! Please write use to include your city in sugestions 😉...
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository has the standard MIT license. You can find it [here.](https://github.com/cawolfkreo/exam-web-dev/blob/master/LICENSE)
+This repository has the standard MIT license. You can find it [here.](https://github.com/nacevedo/MandaoDao/blob/master/LICENSE)
