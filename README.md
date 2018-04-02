@@ -26,8 +26,9 @@ This is a project for a [web development class](http://johnguerra.co/classes/web
 If anyone wants to give me any help or ideas, you can by making new [Issues](https://github.com/nacevedo/MandaoDao/issues) or a [Pull requests](https://github.com/nacevedo/MandaoDao/pulls).
 
 # Authors 
-Bibiana Gamba 👩🏽‍🎨
-Nicolás Acevedo 👨🏼‍🔬
+**Bibiana Gamba** 👩🏽‍🎨
+**Nicolás Acevedo** 👨🏼‍🔬
+# Beta
 Beta versión! Please write use to include your city in sugestions 😉...
 
 ## License
