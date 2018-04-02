@@ -19,7 +19,7 @@ export default class ChatAdd extends Component {
   render() {
     return (
       <div id="ChatMessageAdd">
-      <textarea className="com-text-2" type="text" placeholder="What message do you want to send?" alt="What message do you want to send?" ref="text"/>
+      <textarea className="com-text-2" type="text" role="textbox" placeholder="What message do you want to send?" alt="What message do you want to send?" ref="text"/>
       <button className="my-btn-2"
 
       onClick={

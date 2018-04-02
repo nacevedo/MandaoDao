@@ -25,6 +25,7 @@ export default class CommentAdd extends Component {
           type="text"
           placeholder="Help someone typing your comment"
           alt="Help someone typing your comment"
+          role="textbox"
           ref="text"/>
           </div>
         <button className="my-btn-2"
