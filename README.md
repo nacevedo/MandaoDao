@@ -17,9 +17,15 @@ Install [Meteor](https://www.meteor.com/install) then clone the repo and run
 meteor npm install
 meteor
 ```
-
+## Motivation
+This is a project for a [web development class](http://johnguerra.co/classes/webDevelopment_spring_2018/) in [Uniandes](https://www.uniandes.edu.co). The objective is to make a quick project using **Meteor with React**.
 
 # Authors 
 Bibiana Gamba 👩🏽‍🎨
 Nicolás Acevedo 👨🏼‍🔬
 Beta versión! Please write use to include your city 😉...
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This repository has the standard MIT license. You can find it [here.](https://github.com/cawolfkreo/exam-web-dev/blob/master/LICENSE)
