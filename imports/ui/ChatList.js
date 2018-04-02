@@ -14,7 +14,14 @@ class ChatList extends Component {
     };
   }
 
-  
+  renderMsg(){
+    if (Meteor.userId() === null) {
+      return(
+        <p>Don&#39;t forget you have to be signed in in order to see your current chats</p>
+        )
+    }
+  }
+
   renderPosts() {
     return this.props.chats.map((p,i) =>
       <div className="col-sm-3" key = {i} >
@@ -31,6 +38,8 @@ class ChatList extends Component {
       <div className="ChatList">
         
         {this.renderPosts()}
+
+        {this.renderMsg()}
       </div>
     );
   }
