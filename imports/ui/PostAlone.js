@@ -114,7 +114,7 @@ PostAlone.propTypes = {
 
 export default withTracker(
   (x) => {
-    console.log(x); 
+     
     return {
       comments: Comments.find({post : x.postID}, {sort: {voteCount:-1}}).fetch(), 
       post: Posts.findOne(x.postID)

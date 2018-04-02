@@ -36,7 +36,7 @@ export default class Comment extends Component {
       window.alert ("You are not registered! Please sign in."); 
       return; 
     }
-    console.log(Meteor.user); 
+    
 
     Chats.insert({
       user1: Meteor.user().username,  

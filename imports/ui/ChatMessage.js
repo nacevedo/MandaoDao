@@ -91,7 +91,7 @@ class ChatMessage extends Component {
   }
 
   onChangePostID(){
-    console.log(this.props);
+    
     this.props.updatePostID(this.props.post._id);
   }
 
