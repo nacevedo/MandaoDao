@@ -22,6 +22,10 @@ export default class ChatAdd extends Component {
       <textarea className="com-text-2" 
                 type="text" 
                 role="textbox" 
+                onKeyPress={(e) => InputUtils.onEnterPress(e, (val) => {
+                this.props.onAdd(this.refs.text.value);
+                this.clearContents(this);
+                })}
                 placeholder="What message do you want to send?" 
                 aria-label="What message do you want to send?" 
                 ref="text"/>
