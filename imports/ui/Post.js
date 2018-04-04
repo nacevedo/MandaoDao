@@ -7,6 +7,9 @@ import { Comments } from "../api/posts";
 import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
+//F. Andres Vera: No deberian hacer llamados que cambien la base de datos desde el lado del cliente, 
+//para eso usen metheor.call a los methods.
+
 
 class Post extends Component {
   constructor(props) {
