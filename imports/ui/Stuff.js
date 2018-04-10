@@ -67,7 +67,7 @@ class Stuff extends Component {
 				<hr/>
 				<div className="col-sm-3">
 				<div className="box2">
-			        <PostAdd key = {1}
+			        <PostAdd key = {12}
 			          onAdd={this.onAdd.bind(this)}
 			          >
 			        </PostAdd>

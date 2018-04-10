@@ -29,7 +29,7 @@ class ChatAlone extends Component {
       window.alert ("You are not registered! Please sign in."); 
       return; 
     }
-    console.log("Esta agregadndo"); 
+     
     ChatMessages.insert({
       text:text, 
       chatId: this.props.chatID, 
@@ -39,9 +39,9 @@ class ChatAlone extends Component {
 
   renderPosts() {
     return this.props.chatMessages.map((p,i) =>
-      <div >
+      <div key = {i}>
       
-      <ChatMessage chatMessage = {p} key = {i} > </ChatMessage>
+      <ChatMessage chatMessage = {p}  > </ChatMessage>
       </div>
       
     );
@@ -52,7 +52,6 @@ class ChatAlone extends Component {
 
   render() {
 
-    console.log(this.props);
     return (
       <div id="ChatAlone">
  

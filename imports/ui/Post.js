@@ -120,7 +120,6 @@ class Post extends Component {
 
 export default withTracker(
   (x) => {
-    console.log(x); 
     return {
       comments: Comments.find({post : x.post._id}, {sort: {voteCount:-1}}).fetch()
     };
