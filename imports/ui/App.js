@@ -81,7 +81,9 @@ export class App extends Component {
         <div className="App">
           <div className="navbar-header">
             <div className="row">
-              
+            {/*<li id="sign-in-place" >
+                 <AccountsUIWrapper /> 
+              </li>  */}
             
                 <button type="button" 
                         className="navbar-toggle collapsed"
@@ -111,7 +113,7 @@ export class App extends Component {
               <li>
                 <NavLink to="/chatchat">{this.state.user1} &nbsp; {this.state.user2}</NavLink>
               </li>
-              <li id="sign-in-place" className="hidden-xs">
+              <li id="sign-in-place" >
                 <AccountsUIWrapper />
               </li>
             </ul>
