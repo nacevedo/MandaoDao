@@ -96,12 +96,21 @@ class Post extends Component {
     this.props.updatePostID(this.props.post._id);
   }
 
+  userName(){
+    if(this.props.post.who.profile == undefined){
+      return this.props.post.who.username;
+    }
+    else{
+      return this.props.post.who.profile.name;
+    }
+  }
+
   render() {
     return (
       <div id="Post">
       
 
-        <div><span className="fa">&#xf007;</span>&nbsp;{this.props.post.who.username}</div>
+        <div><span className="fa">&#xf007;</span>&nbsp;{this.userName()}</div>
         <hr/>
         <div id="pTitle"><span>{this.props.post.title}</span></div>
         <div >{this.props.post.text}</div>

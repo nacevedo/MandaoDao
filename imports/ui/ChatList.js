@@ -49,11 +49,26 @@ ChatList.propTypes = {
 
 };
 
+
+
 export default withTracker(
   () => {
+
+
+    var userName = () => {
+    if(Meteor.user().profile == undefined){
+      return Meteor.user().username;
+    }
+    else{
+      return Meteor.user().profile.name} Meteor.user().username;
+    }
+}
+
+
     Meteor.subscribe("chats");
+
     return {
-      chats: Chats.find({$or: [ { "user1":  Meteor.user().username }, { "user2": Meteor.user().username } ]}).fetch()
+      chats: Chats.find({$or: [ { "user1": userName(), { "user2": userName()} ]}).fetch()
     };
   }
 )(ChatList);

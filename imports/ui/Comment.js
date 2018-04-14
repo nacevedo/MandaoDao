@@ -48,13 +48,21 @@ export default class Comment extends Component {
     **/
   }
 
+  userName(){
+    if(this.props.post.who.profile == undefined){
+      return this.props.post.who.username;
+    }
+    else{
+      return this.props.post.who.profile.name;
+    }
+  }
 
   render() {
     return (
       <div id="Comment">
       <div className="box3">
         <div className="row">
-        <div className="col-sm-4"><span className="fa">&#xf007;</span>&nbsp;{this.props.comment.who.username}</div>
+        <div className="col-sm-4"><span className="fa">&#xf007;</span>&nbsp;{this.userName()}</div>
         <div className="col-sm-8">
         <NavLink exact to="/chat"> <button className="my-btn-5" onClick = {this.addChat.bind(this)}> New chat with {this.props.comment.who.username}</button> </NavLink>
         </div>
