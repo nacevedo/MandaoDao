@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import Modal from './Modal';
 import CommentList from './CommentList'; 
 import CommentAdd from './CommentAdd'; 
-import { Comments } from "../api/posts";
+import { Comments } from "../api/comments";
 import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
 import { Posts } from "../api/posts";
+import { Meteor } from 'meteor/meteor';
 
 
 class PostAlone extends Component {
@@ -37,7 +38,15 @@ class PostAlone extends Component {
   }
 
   onAdd(text) {
+    if (Meteor.userId() === null) 
+    {
+      window.alert("You are not registered ! Please sign in."); 
+      return; 
+    }
 
+    Meteor.call('comments.insert', this.props.city, this.props.post_id, text);
+
+/**
     // User exists ?? 
 
     if (Meteor.userId() === null) 
@@ -57,7 +66,7 @@ class PostAlone extends Component {
       votes:{
         "👍":0
       }
-    });
+    });**/
 
   }
 
@@ -114,8 +123,12 @@ PostAlone.propTypes = {
 
 export default withTracker(
   (x) => {
-     
+    Meteor.subscribe("comments");
+    Meteor.subscribe("posts");
+    console.log(Comments.find({}).fetch()); 
+
     return {
+
       comments: Comments.find({post : x.postID}, {sort: {voteCount:-1}}).fetch(), 
       post: Posts.findOne(x.postID)
     };

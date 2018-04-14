@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import Modal from './Modal';
 import CommentList from './CommentList'; 
 import CommentAdd from './CommentAdd'; 
-import { Comments } from "../api/posts";
+import { Comments } from "../api/comments";
 import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
-import { ChatMessages } from "../api/posts";
-import { Chats } from "../api/posts";
+import { ChatMessages } from "../api/chatMessages";
+import { Chats } from "../api/chats";
 import ChatMessageAdd from './ChatMessageAdd'; 
 
 
@@ -34,12 +34,18 @@ class Chat extends Component {
       window.alert ("You are not registered! Please sign in."); 
       return; 
     }
+    console.log (this.props.chat_id);   
 
+    Meteor.call('chatMessages.insert', text, this.props.chat_id); 
+}
+
+/**
     ChatMessages.insert({
       text:text, 
       chatId: this.props.chat._id
     });
   }
+  **/
 
   renderPosts() {
     return this.props.chatMessages.map((p,i) =>

@@ -3,40 +3,35 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
 
-export const Posts = new Mongo.Collection("posts");
+export const ChatMessages = new Mongo.Collection("chatMessages");
 
 if(Meteor.isServer) {
-	Meteor.publish("posts", () => {
-		return Posts.find({});
+	Meteor.publish("chatMessages", () => {
+		return ChatMessages.find({});
 	});
 }
 
 Meteor.methods({
 
-  'posts.insert'(city, text, title) {
+  'chatMessages.insert'(text, chatId) {
     check(text, String);
  
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
-    
+    console.log("no entiendo por que no funciona"); 
  
-    Posts.insert({
-			city: city, 
-			who: Meteor.user(), 
-			text,
-			title:title, 
-			voteCount:0,
-			votes:{
-				"👍":0
-			}
+    ChatMessages.insert({
+      text:text, 
+      chatId: chatId
     });
+
   },
-  'posts.remove'(postId) {
+  'chatMessages.remove'(postId) {
     check(postId, String);
  
-    Posts.remove(postId);
+    ChatMessages.remove(postId);
   },
 });
 

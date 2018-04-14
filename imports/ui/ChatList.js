@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Chat from "./Chat";
-import { Chats } from "../api/posts";
+import { Chats } from "../api/chats";
 import { withTracker } from "meteor/react-meteor-data";
 
 class ChatList extends Component {
@@ -51,6 +51,7 @@ ChatList.propTypes = {
 
 export default withTracker(
   () => {
+    Meteor.subscribe("chats");
     return {
       chats: Chats.find({$or: [ { "user1":  Meteor.user().username }, { "user2": Meteor.user().username } ]}).fetch()
     };

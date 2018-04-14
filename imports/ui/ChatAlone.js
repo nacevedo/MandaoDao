@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
-import { ChatMessages } from "../api/posts";
-import { Chats } from "../api/posts";
+import { ChatMessages } from "../api/chatMessages";
+import { Chats } from "../api/chats";
 import ChatMessageAdd from './ChatMessageAdd'; 
 import ChatMessage from './ChatMessage';
 
@@ -29,12 +29,16 @@ class ChatAlone extends Component {
       window.alert ("You are not registered! Please sign in."); 
       return; 
     }
+
+    Meteor.call('chatMessages.insert', text, this.props.chatID); 
      
+     /**
     ChatMessages.insert({
       text:text, 
       chatId: this.props.chatID, 
       user: Meteor.user().username
     });
+    **/
   }
 
   renderPosts() {
@@ -74,7 +78,8 @@ ChatAlone.propTypes = {
 
 export default withTracker(
   (props) => {
-  
+    Meteor.subscribe("chatMessages");
+    Meteor.subscribe("chats");
     return {
       chatMessages: ChatMessages.find({chatId : props.chatID}).fetch()
     };
