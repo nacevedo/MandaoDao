@@ -20,21 +20,8 @@ class PostAlone extends Component {
 
   //This are the functions for comments 
   onVote(comment, emoji) {
-    let postObj = Comments.findOne(comment._id);
-
-    if (!postObj) {
-      console.err("Post not found!");
-      return;
-    }
-
-    postObj.voteCount+=1;
-    if (postObj.votes[emoji]===undefined) {
-      postObj.votes[emoji]=0;
-    }
-    postObj.votes[emoji]+=1;
-
-    Comments.update(postObj._id,
-      postObj);
+    
+    Meteor.call('comments.vote', comment, emoji); 
   }
 
   onAdd(text) {
