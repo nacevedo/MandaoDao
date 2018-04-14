@@ -69,7 +69,7 @@ export default withTracker(
     Meteor.subscribe("chats");
 
     return {
-      chats: Chats.find({$or: [ { "user1": userName}, { "user2": userName } ]}).fetch()
+      chats: Chats.find({$or: [ { "user1": userName}, { "user2": userName} ]}).fetch()
     };
   }
 )(ChatList);

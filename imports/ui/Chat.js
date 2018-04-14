@@ -64,6 +64,7 @@ class Chat extends Component {
 
   onChangeUser1(){
     this.props.updateUser1(this.props.chat.user1);
+    console.log(this.props.chat.user1);
   }
 
   onChangeUser2(){

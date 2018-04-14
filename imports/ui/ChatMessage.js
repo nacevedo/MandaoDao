@@ -66,11 +66,19 @@ class ChatMessage extends Component {
     });
   }
 
+  userName(){
+    if(Meteor.user().profile == undefined){
+      return Meteor.user().username;
+    }
+    else{
+      return Meteor.user().profile.name;
+    }
+  }
 
 
   renderMessage(){
 
-    if(Meteor.user().username == this.props.chatMessage.user){
+    if(this.userName() == this.props.chatMessage.user){
       return(
       <div className="my-message">
       
@@ -79,6 +87,8 @@ class ChatMessage extends Component {
       </div>)
     }
     else{
+      console.log(this.userName());
+      console.log(this.props.chatMessage.user);
       return(
       <div className="other-message">
         <p>{this.props.chatMessage.user}: {this.props.chatMessage.text}</p>
