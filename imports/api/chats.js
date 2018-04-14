@@ -11,9 +11,21 @@ if(Meteor.isServer) {
 	});
 }
 
+var userNames = () => {
+
+  if(Meteor.user().profile == undefined)
+    {
+      return Meteor.user().username;
+    }
+    else
+    {
+      return Meteor.user().profile.name;
+    }
+}
+
 Meteor.methods({
 
-  'chats.insert'(username) {
+  'chats.insert'(username, un1) {
  
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
@@ -22,7 +34,7 @@ Meteor.methods({
     
  
     Chats.insert({
-      user1: Meteor.user().username,  
+      user1: un1,  
       user2: username
     });
   },
