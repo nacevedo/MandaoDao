@@ -19,6 +19,10 @@ class Post extends Component {
 
   //This are the functions for comments 
   onVote(comment, emoji) {
+
+    Meteor.call('comments.vote', comment, emoji); 
+
+    /**
     let postObj = Comments.findOne(comment._id);
 
     if (!postObj) {
@@ -34,6 +38,7 @@ class Post extends Component {
 
     Comments.update(postObj._id,
       postObj);
+      **/
   }
 
   onAdd(text) {

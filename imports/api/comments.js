@@ -18,7 +18,7 @@ Meteor.methods({
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
-    console.log(city); 
+  
  
     Comments.insert({
       city: city, 
@@ -32,6 +32,27 @@ Meteor.methods({
 
 
     });
-  }
+  },
+    'comments.vote'(postId, emoji) {
+
+
+    let postObj = Comments.findOne(postId);
+    console.log(postObj); 
+
+    if (!postObj) {
+      console.err("Post not found!");
+      return;
+    }
+
+    postObj.voteCount+=1;
+    if (postObj.votes[emoji]===undefined) {
+      postObj.votes[emoji]=0;
+    }
+    postObj.votes[emoji]+=1;
+
+    Comments.update(postObj._id,
+      postObj);
+
+  },
 
 });

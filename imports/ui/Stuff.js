@@ -17,6 +17,9 @@ class Stuff extends Component {
 	}
 
 	onVote(post, emoji) {
+
+		Meteor.call('posts.vote', post._id, emoji); 
+		/**
 		let postObj = Posts.findOne(post._id);
 
 		if (!postObj) {
@@ -32,6 +35,7 @@ class Stuff extends Component {
 
 		Posts.update(postObj._id,
 			postObj);
+			**/
 	}
 
 	onAdd(title, text) {
