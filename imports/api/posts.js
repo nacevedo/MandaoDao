@@ -20,8 +20,6 @@ Meteor.methods({
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
-    
- 
     Posts.insert({
 			city: city, 
 			who: Meteor.user(), 
@@ -37,6 +35,28 @@ Meteor.methods({
     check(postId, String);
  
     Posts.remove(postId);
+  },
+  'posts.vote'(postId, emoji) {
+
+
+    let postObj = Posts.findOne(postId);
+
+    console.log("llega hasta aca" + postObj); 
+
+    if (!postObj) {
+      console.err("Post not found!");
+      return;
+    }
+
+    postObj.voteCount+=1;
+    if (postObj.votes[emoji]===undefined) {
+      postObj.votes[emoji]=0;
+    }
+    postObj.votes[emoji]+=1;
+
+    Posts.update(postObj._id,
+      postObj);
+
   },
 });
 
