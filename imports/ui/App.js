@@ -153,6 +153,7 @@ App.propTypes = {
 
 export default withTracker(
   () => {
+    Meteor.subscribe("posts");
     return {
       posts: Posts.find({}, {sort: {voteCount:-1}}).fetch()
     };

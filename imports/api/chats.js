@@ -3,18 +3,17 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
 
-export const Posts = new Mongo.Collection("posts");
+export const Chats = new Mongo.Collection("chats");
 
 if(Meteor.isServer) {
-	Meteor.publish("posts", () => {
-		return Posts.find({});
+	Meteor.publish("chats", () => {
+		return Chats.find({});
 	});
 }
 
 Meteor.methods({
 
-  'posts.insert'(city, text, title) {
-    check(text, String);
+  'chats.insert'(username) {
  
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
@@ -22,21 +21,15 @@ Meteor.methods({
     }
     
  
-    Posts.insert({
-			city: city, 
-			who: Meteor.user(), 
-			text,
-			title:title, 
-			voteCount:0,
-			votes:{
-				"👍":0
-			}
+    Chats.insert({
+      user1: Meteor.user().username,  
+      user2: username
     });
   },
-  'posts.remove'(postId) {
+  'chats.remove'(postId) {
     check(postId, String);
  
-    Posts.remove(postId);
+    Chats.remove(postId);
   },
 });
 

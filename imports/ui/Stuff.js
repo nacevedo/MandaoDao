@@ -44,7 +44,10 @@ class Stuff extends Component {
 			return; 
 		}
 
+		Meteor.call('posts.insert', this.props.city, text, title); 
 
+
+		/**
 		if (!text) return;
 		Posts.insert({
 			city: this.props.city, 
@@ -56,6 +59,7 @@ class Stuff extends Component {
 				"👍":0
 			}
 		});
+		**/
 
 	}
 
@@ -103,6 +107,7 @@ Stuff.propTypes = {
 
 export default withTracker(
   (x) => {
+  	Meteor.subscribe("posts");
     return {
       posts: Posts.find({city : x.city}, {sort: {voteCount:-1}}).fetch()
     };

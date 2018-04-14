@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Meteor } from 'meteor/meteor';
 import PropTypes from "prop-types";
 import Modal from './Modal';
 import CommentList from './CommentList'; 
 import CommentAdd from './CommentAdd'; 
-import { Comments } from "../api/posts";
+import { Comments } from "../api/comments";
 import { withTracker } from "meteor/react-meteor-data";
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
@@ -45,7 +46,10 @@ class Post extends Component {
       return; 
     }
 
+    Meteor.call('comments.insert', this.props.city, this.props.post_id, text)
 
+
+/**
     if (!text) return;
     Comments.insert({
       city: this.props.city, 
@@ -57,6 +61,7 @@ class Post extends Component {
         "👍":0
       }
     });
+    **/
 
   }
 
@@ -129,6 +134,7 @@ class Post extends Component {
 
 export default withTracker(
   (x) => {
+    Meteor.subscribe("comments");
     return {
       comments: Comments.find({post : x.post._id}, {sort: {voteCount:-1}}).fetch()
     };

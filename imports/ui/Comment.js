@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Modal from './Modal';
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
-import { Chats } from "../api/posts";
+import { Chats } from "../api/chats";
 
 
 export default class Comment extends Component {
@@ -36,12 +36,16 @@ export default class Comment extends Component {
       window.alert ("You are not registered! Please sign in."); 
       return; 
     }
-    
 
+    Meteor.call('chats.insert', this.props.comment.who.username); 
+
+    
+/**
     Chats.insert({
       user1: Meteor.user().username,  
       user2: this.props.comment.who.username
     });
+    **/
   }
 
   userName(){
