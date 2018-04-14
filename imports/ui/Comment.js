@@ -37,7 +37,7 @@ export default class Comment extends Component {
       return; 
     }
 
-    Meteor.call('chats.insert', this.props.comment.who.username); 
+    Meteor.call('chats.insert', this.userName(), this.actualUN()); 
 
     
 /**
@@ -47,6 +47,19 @@ export default class Comment extends Component {
     });
     **/
   }
+
+  actualUN() {
+
+    if(Meteor.user().profile == undefined)
+      {
+        return Meteor.user().username;
+      }
+      else
+      {
+        return Meteor.user().profile.name;
+      }
+  }
+
 
   userName(){
     if(this.props.comment.who.profile == undefined){
@@ -64,7 +77,7 @@ export default class Comment extends Component {
         <div className="row">
         <div className="col-sm-4"><span className="fa">&#xf007;</span>&nbsp;{this.userName()}</div>
         <div className="col-sm-8">
-        <NavLink exact to="/chat"> <button className="my-btn-5" onClick = {this.addChat.bind(this)}> New chat with {this.props.comment.who.username}</button> </NavLink>
+        <NavLink exact to="/chat"> <button className="my-btn-5" onClick = {this.addChat.bind(this)}> New chat with {this.userName()}</button> </NavLink>
         </div>
         </div>
         <hr/>
