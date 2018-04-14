@@ -1,11 +1,14 @@
 /* Basic styling for the web site */
+body{
+
+	background: linear-gradient(to top right, rgba(12,183,225,1), rgba(22,202,202,1), rgba(29,219,182,1));
+
+
+}
 #render-target {
 	font-size: 16px;
 	color: #424848;
 	font-family: 'Raleway', sans-serif;
-
-	background: linear-gradient(to top right, rgba(12,183,225,1), rgba(22,202,202,1), rgba(29,219,182,1));
-
 	padding-bottom: 50px;
 	padding-top: 20px;
 }
