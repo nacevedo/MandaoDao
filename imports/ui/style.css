@@ -1,10 +1,10 @@
 /* Basic styling for the web site */
-body{
-
+body {
 	background: linear-gradient(to top right, rgba(12,183,225,1), rgba(22,202,202,1), rgba(29,219,182,1));
-
-
+	background-repeat: no-repeat;
+	background-size:cover;
 }
+
 #render-target {
 	font-size: 16px;
 	color: #424848;
@@ -517,17 +517,27 @@ div.static-likes{
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
-}
 
+
+body{
+	min-height: 1080px;
+}
+}
 /********** Medium devices only **********/
 @media (min-width: 951px) and (max-width: 1199px) {
-}
 
+
+body{
+	min-height: 768px;
+}
+}
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 950px) {
 
-
+body{
+	min-height: 700px;
+}
 
 
 }
@@ -567,7 +577,7 @@ div.static-likes{
 	a#login-name-link.login-link-text, a#login-sign-in-link.login-link-text{
 		background-color: #FFB335;
 		color: #424848;
-		padding: 15px ;
+		padding: 20px ;
 		text-align: center; 
 		text-decoration: none;
 		display: inline-block;
@@ -581,6 +591,7 @@ div.static-likes{
 		border-radius: 0;
 	}
 
+
 	div#login-buttons-dropdown-align-{
 		position: absolute;
 	}
@@ -591,6 +602,11 @@ div.static-likes{
 	}
 
 	
+	#login-dropdown-list, #login-dropdown-list {
+	    position: relative;
+	    top: -70px;
+	    left: 0px;
+	}
 
 	#login-buttons .login-button, .accounts-dialog .login-button {
 		background-color: #FB3453;
@@ -613,21 +629,23 @@ div.static-likes{
 		font-family: 'Raleway', sans-serif;
 	}
 
-	#login-dropdown-list, #login-dropdown-list {
-		position: absolute;
-		top: -1px;
-		left: 10px;
-	}
 
 	#login-buttons .login-close-text {
 		float: left;
 	}
 
+	#sign-in-place {
+		float: right;
+		padding-right: 30px;
+		font-family: 'Raleway', sans-serif;
+	}
+
+
 /* Home styles */
 
 	.box{
 		background-color: rgba(30,74,74,0.2);
-		margin: 0px;
+		margin: 10px;
 		margin-bottom: 50px;
 		padding: 8px;
 	}
@@ -647,13 +665,51 @@ div.static-likes{
 	#ChatMessageAdd {
 		padding: 0px; 
 	}
+
+	#ChatAlone {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+
+	.my-btn {
+
+		width: 30%;
+		font-size: 18px;
+
+
+	}
+
+	
 }
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
 
+/* Home styles */
 
+	.box{
+		background-color: rgba(30,74,74,0.2);
+		margin: 0px;
+		margin-bottom: 50px;
+		padding: 8px;
+	}
 
+	#home-city {
+		text-align: center;
+		padding: 10px;
+		padding-top: 5px;
+	}
+
+	#render-target h1{
+	
+		font-size: 3.4em;
+	}
+
+	#render-target h2{
+	
+		font-size: 1.5em;
+	}
 }
 

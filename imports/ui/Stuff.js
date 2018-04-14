@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withTracker } from "meteor/react-meteor-data";
 import { Posts } from "../api/posts";
 
+
 import PostList from "./PostList";
 import PostAdd from "./PostAdd";
 
@@ -77,6 +78,7 @@ class Stuff extends Component {
 				<h2 id="cf">Community&#39;s Favors</h2>
 				<hr/>
 				<div className="row">
+				
 				<PostList
 					key = {45}
 		          posts={this.props.posts}
@@ -85,7 +87,7 @@ class Stuff extends Component {
 		          updatePostName={this.props.updatePostName.bind(this)}
 		          >
         		</PostList>
-        		
+      
         		</div>
         		</div>
         		

@@ -81,9 +81,6 @@ export class App extends Component {
         <div className="App">
           <div className="navbar-header">
             <div className="row">
-            {/*<li id="sign-in-place" >
-                 <AccountsUIWrapper /> 
-              </li>  */}
             
                 <button type="button" 
                         className="navbar-toggle collapsed"
