@@ -44,7 +44,9 @@ class PostAlone extends Component {
       return; 
     }
 
-    Meteor.call('comments.insert', this.props.city, this.props.post_id, text);
+    console.log(this.props.city); 
+
+    Meteor.call('comments.insert', this.props.city, this.props.postID, text);
 
 /**
     // User exists ?? 
@@ -125,8 +127,7 @@ export default withTracker(
   (x) => {
     Meteor.subscribe("comments");
     Meteor.subscribe("posts");
-    console.log(Comments.find({}).fetch()); 
-
+    console.log(Posts.findOne(x.postID)); 
     return {
 
       comments: Comments.find({post : x.postID}, {sort: {voteCount:-1}}).fetch(), 

@@ -45,8 +45,9 @@ class Post extends Component {
       window.alert("You are not registered ! Please sign in."); 
       return; 
     }
+    console.log(this.props.city); 
 
-    Meteor.call('comments.insert', this.props.city, this.props.post_id, text)
+    Meteor.call('comments.insert', this.props.city, this.props.post_id, text);
 
 
 /**
