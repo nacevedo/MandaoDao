@@ -67,6 +67,11 @@ class Stuff extends Component {
 
 	}
 
+	searchPost(){
+		console.log("esta llegando al search post " + this.refs.text.value)
+		this.props.filter(this.refs.text.value); 
+	}
+
 
 
 	render() {
@@ -86,6 +91,8 @@ class Stuff extends Component {
 				<h2 id="cf">Community&#39;s Favors</h2>
 				<hr/>
 				<div className="row">
+				<textarea placeholder = "su merce escriba aca el favor que quiere encontrar si le da pereza buscarlo en la lista de abajo" ref = "text"/> 
+				<button onClick = {this.searchPost.bind(this)}> Search </button> 
 				
 				<PostList
 					key = {45}
@@ -111,9 +118,19 @@ Stuff.propTypes = {
 
 export default withTracker(
   (x) => {
+  	console.log(x.search); 
   	Meteor.subscribe("posts");
-    return {
-      posts: Posts.find({city : x.city}, {sort: {voteCount:-1}}).fetch()
-    };
+  	if (x.search === null || x.search === "")
+  	{
+    	return {
+     		 posts: Posts.find({city : x.city}, {sort: {voteCount:-1}}).fetch()
+    	};
+	}
+	else 
+	{
+		return {
+			posts: Posts.find( { $and: [{city : x.city} , {title : x.search}] }, {sort: {voteCount:-1}}).fetch()
+		}; 
+	}
   }
 )(Stuff);

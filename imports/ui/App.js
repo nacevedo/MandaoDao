@@ -25,7 +25,8 @@ export class App extends Component {
       postID: "",
       chatID:"",
       user1:"",
-      user2:""
+      user2:"",
+      search: null
     };
   }
 
@@ -72,6 +73,13 @@ export class App extends Component {
     this.setState({
       user2: id
     });
+
+  }
+
+  filter(text){
+    this.setState({
+      search: text
+    }); 
 
   }
 
@@ -124,7 +132,9 @@ export class App extends Component {
             <Route path="/city/" render={()=>
             <Stuff city={this.state.city} 
               updatePostID={this.onChangePostID.bind(this)} 
-              updatePostName={this.onChangePost.bind(this)} />
+              updatePostName={this.onChangePost.bind(this)} 
+              search = {this.state.search}
+              filter = {this.filter.bind(this)} />
             } />
             <Route path="/post/" render={()=>
             <PostAlone postID={this.state.postID} />
