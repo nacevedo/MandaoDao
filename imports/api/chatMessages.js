@@ -15,7 +15,7 @@ Meteor.methods({
 
   'chatMessages.insert'(text, chatId) {
     check(text, String);
- 
+    
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
@@ -24,7 +24,8 @@ Meteor.methods({
  
     ChatMessages.insert({
       text:text, 
-      chatId: chatId
+      chatId: chatId, 
+      user : Meteor.user().username
     });
 
   },
