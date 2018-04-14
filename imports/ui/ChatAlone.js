@@ -32,7 +32,7 @@ class ChatAlone extends Component {
       return; 
     }
 
-    Meteor.call('chatMessages.insert', text, this.props.chatID); 
+    Meteor.call('chatMessages.insert', text, this.props.chatID, this.actualUN()); 
      
      /**
     ChatMessages.insert({
@@ -53,6 +53,17 @@ class ChatAlone extends Component {
     );
   }
 
+  actualUN() {
+
+    if(Meteor.user().profile == undefined)
+      {
+        return Meteor.user().username;
+      }
+      else
+      {
+        return Meteor.user().profile.name;
+      }
+  }
 
   
 

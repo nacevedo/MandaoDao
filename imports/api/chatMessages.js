@@ -11,21 +11,21 @@ if(Meteor.isServer) {
 	});
 }
 
+
 Meteor.methods({
 
-  'chatMessages.insert'(text, chatId) {
+  'chatMessages.insert'(text, chatId, un) {
     check(text, String);
     
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
-    console.log("no entiendo por que no funciona"); 
  
     ChatMessages.insert({
       text:text, 
       chatId: chatId, 
-      user : Meteor.user().username
+      user : un
     });
 
   },
