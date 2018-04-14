@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Chat from "./Chat";
-import { Chats } from "../api/chats";
+import { Chats } from "../api/posts";
 import { withTracker } from "meteor/react-meteor-data";
 
 class ChatList extends Component {
@@ -49,26 +49,27 @@ ChatList.propTypes = {
 
 };
 
+var userNames = () => {
 
+  if(Meteor.user().profile == undefined)
+    {
+      return Meteor.user().username;
+    }
+    else
+    {
+      return Meteor.user().profile.name;
+    }
+}
+    
 
 export default withTracker(
   () => {
 
+    var userName = userNames();
 
-    var userName = () => {
-    if(Meteor.user().profile == undefined){
-      return Meteor.user().username;
-    }
-    else{
-      return Meteor.user().profile.name} Meteor.user().username;
-    }
-}
-
-
-    Meteor.subscribe("chats");
 
     return {
-      chats: Chats.find({$or: [ { "user1": userName(), { "user2": userName()} ]}).fetch()
+      chats: Chats.find({$or: [ { "user1": userName}, { "user2": userName } ]}).fetch()
     };
   }
 )(ChatList);

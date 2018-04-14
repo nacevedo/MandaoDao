@@ -49,11 +49,11 @@ export default class Comment extends Component {
   }
 
   userName(){
-    if(this.props.post.who.profile == undefined){
-      return this.props.post.who.username;
+    if(this.props.comment.who.profile == undefined){
+      return this.props.comment.who.username;
     }
     else{
-      return this.props.post.who.profile.name;
+      return this.props.comment.who.profile.name;
     }
   }
 
