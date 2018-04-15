@@ -23,7 +23,7 @@ meteor npm install
 meteor
 ```
 
-##Running Tests
+## Running Tests
 In order tu run the tests of the project just run
 
 ```
