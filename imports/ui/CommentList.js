@@ -6,14 +6,24 @@ import Comment from "./Comment";
 export default class CommentList extends Component {
   constructor(props) {
     super(props);
+    
+    this.handleShowMore = this.handleShowMore.bind(this);
 
     this.state={
-
+        showItems: 10
     };
   }
 
+  handleShowMore() {
+    this.setState({
+      showItems: 
+        this.state.showItems >= this.props.comments.length ?
+          this.state.showItems : this.state.showItems + 10
+    })
+  }
+
   renderPosts() {
-    return this.props.comments.map((p,i) =>
+    return this.props.comments.slice(0, this.state.showItems).map((p,i) =>
       <Comment
         onVote={this.props.onVote}
         key={i}
@@ -27,6 +37,13 @@ export default class CommentList extends Component {
         <h2 id="city-name">Comments</h2>
         <hr/>
         {this.renderPosts()}
+        <div className="row">
+        <div className="col-sm-12">
+        <button className="my-btn-6" onClick={this.handleShowMore}>
+          Show more!
+        </button>
+        </div>
+        </div>
       </div>
     );
   }

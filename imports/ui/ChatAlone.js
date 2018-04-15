@@ -8,7 +8,6 @@ import { Chats } from "../api/chats";
 import ChatMessageAdd from './ChatMessageAdd'; 
 import ChatMessage from './ChatMessage';
 
-//import {ScrollView} from "react-native";
 
 
 class ChatAlone extends Component {
@@ -65,6 +64,10 @@ class ChatAlone extends Component {
       }
   }
 
+  componentDidUpdate() {
+     var objDiv = document.getElementById("chat-content");
+     objDiv.scrollTop = objDiv.scrollHeight;
+  }
   
 
   render() {
@@ -75,12 +78,12 @@ class ChatAlone extends Component {
 
         <h2> Chat members: {this.props.u1} & {this.props.u2} </h2>
         <hr/>
-      {/*<ScrollView>*/}  
+  
         <div id="chat-content">
         {this.renderPosts()}
         </div>
         <ChatMessageAdd onAdd = {this.onAdd.bind(this)}> </ChatMessageAdd> 
-        {/*</ScrollView>*/}
+     
       </div>
       );
   }

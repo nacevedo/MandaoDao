@@ -9,9 +9,19 @@ class ChatList extends Component {
   constructor(props) {
     super(props);
 
-    this.state={
+    this.handleShowMore = this.handleShowMore.bind(this);
 
+    this.state={
+        showItems: 10
     };
+  }
+
+  handleShowMore() {
+    this.setState({
+      showItems: 
+        this.state.showItems >= this.props.chats.length ?
+          this.state.showItems : this.state.showItems + 10
+    })
   }
 
   renderMsg(){
@@ -23,7 +33,7 @@ class ChatList extends Component {
   }
 
   renderPosts() {
-    return this.props.chats.map((p,i) =>
+    return this.props.chats.slice(0, this.state.showItems).map((p,i) =>
       <div className="col-sm-3" key = {i} >
       <div className="box3">
       <Chat chat = {p} updateChatID={this.props.updateChatID.bind(this)} 
@@ -38,7 +48,13 @@ class ChatList extends Component {
       <div className="ChatList">
         
         {this.renderPosts()}
-
+        <div className="row">
+        <div className="col-sm-12">
+        <button className="my-btn-6" onClick={this.handleShowMore}>
+          Show more!
+        </button>
+        </div>
+        </div>
         {this.renderMsg()}
       </div>
     );
