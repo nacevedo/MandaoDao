@@ -143,7 +143,7 @@ class Home extends Component {
         var radlat2 = Math.PI * city.lat/180;
         var radlon1 = Math.PI * longitude/180;
         var radlon2 = Math.PI * city.lng/180
-        var theta = lon1-lon2
+        var theta = longitude-city.lng
         var radtheta = Math.PI * theta/180
         var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
         dist = Math.acos(dist)
