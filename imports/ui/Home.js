@@ -136,9 +136,12 @@ class Home extends Component {
 	    var which = null; 
 	    var min = 999999999999; 
 
+	    var count = 0; 
+
 	    for (city in cities)
 	    {
 
+	    count++; 
 	    var radlat1 = Math.PI * latitude/180;
         var radlat2 = Math.PI * city.lat/180;
         var radlon1 = Math.PI * longitude/180;
@@ -159,7 +162,7 @@ class Home extends Component {
 
 	    }
 
-	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which+'</p>';
+	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which+ 'cuantos: '+ count+'</p>';
 	    
 	  }
 
