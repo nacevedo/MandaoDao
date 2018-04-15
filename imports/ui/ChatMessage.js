@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Modal from './Modal';
 import CommentList from './CommentList'; 
 import CommentAdd from './CommentAdd'; 
 import { Comments } from "../api/posts";

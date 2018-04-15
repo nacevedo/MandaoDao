@@ -69,57 +69,6 @@ class Home extends Component {
 		this.props.updateCity(this.state.value);
 	}
 
-	/*geoFindMe(){
-
-		var options = {
-		  enableHighAccuracy: true,
-		  timeout: 50000,
-		  maximumAge: 0
-		};
-
-		function success(pos) {
-		  var crd = pos.coords;
-
-		  console.log('Your current position is:');
-		  console.log(`Latitude : ${crd.latitude}`);
-		  console.log(`Longitude: ${crd.longitude}`);
-		  console.log(`More or less ${crd.accuracy} meters.`);
-		}
-
-		function error(err) {
-		  console.warn(`ERROR(${err.code}): ${err.message}`);
-		}
-
-		navigator.geolocation.getCurrentPosition(success, error, options);
-	    
-	
-		  var output = document.getElementById("out");
-
-		  if (!navigator.geolocation){
-		    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-		    return;
-		  }
-
-		  function success(position) {
-		    var latitude  = position.coords.latitude;
-		    var longitude = position.coords.longitude;
-
-		    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
-		  }
-
-		  function error() {
-		    output.innerHTML = "Unable to retrieve your location";
-		  }
-
-		  //output.innerHTML = "<p>Locating…</p>";
-
-		  navigator.geolocation.getCurrentPosition(success, error);
-		
-
-
-	} */
-
 	geoFindMe() {
 	  var output = document.getElementById("out");
 
@@ -136,35 +85,47 @@ class Home extends Component {
 	    var which = null; 
 	    var min = 999999999999; 
 
+	    var topC = [];
+	    var printCities = "";
+
 	    var count = 0; 
 
-	    for (city in cities)
+	    for (i in cities)
 	    {
+	 
+		    count++; 
+		    var radlat1 = Math.PI * (latitude/180);
+		
+	        var radlat2 = Math.PI * (cities[i].lat/180);
+	   
+	        var radlon1 = Math.PI * (longitude/180);
+	     
+	        var radlon2 = Math.PI * (cities[i].lng/180);
+	    
+	        var theta = longitude - cities[i].lng;
+	        var radtheta = Math.PI * (theta/180);
+	        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+	    
+	        dist = Math.acos(dist);
+	     
+	        dist = dist * 180/Math.PI;
+	     
+	        dist = dist * 60 * 1.1515;
+	       
+	        dist = dist * 1.609344;
 
-	    count++; 
-	    var radlat1 = Math.PI * latitude/180;
-        var radlat2 = Math.PI * city.lat/180;
-        var radlon1 = Math.PI * longitude/180;
-        var radlon2 = Math.PI * city.lng/180
-        var theta = longitude-city.lng
-        var radtheta = Math.PI * theta/180
-        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-        dist = Math.acos(dist)
-        dist = dist * 180/Math.PI
-        dist = dist * 60 * 1.1515
-        dist = dist * 1.609344 
-
-        console.log(dist); 
-        if (dist < min)
-        {
-        	min = dist; 
-        	which = city.name;
-        	console.log(city.name);  
-        }
+	        if (dist < min)
+	        {
+	        	min = dist; 
+	        	which = cities[i].name;
+	        	console.log(cities[i].name);  
+	        	topC.push(which);
+	        	printCities = printCities + " <br/> " + which;
+	        }
 
 	    }
 
-	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which+ 'cuantos:   '+ count+'</p>';
+	    output.innerHTML = '<p>'+printCities +'</p>';
 	    
 	  }
 

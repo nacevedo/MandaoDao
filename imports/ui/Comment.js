@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Modal from './Modal';
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
 import { Chats } from "../api/chats";
