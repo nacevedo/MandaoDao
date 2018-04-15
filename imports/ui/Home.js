@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Autosuggest from 'react-autosuggest';
 import {Route, NavLink, HashRouter} from "react-router-dom";
 
-import cities from 'cities.json';
+import cities from './cities.json';
 
 
 function escapeRegexCharacters(str) {
@@ -194,10 +194,12 @@ class Home extends Component {
 				<p>You&#39;re new to a city? Come talk to people who know the city and easily get around!</p>
 				<p>We want to create a community of people that can help each other with what they have to offer. 
 				So don't doubt to find help here and to meet new people.</p>
-				<p> </p>
-				<p> </p>
-				<p> </p>
-				<p> </p>
+				<br/>
+				<hr/>
+				<br/>
+				<p> This Website uses your location </p>
+				<p> This Website tracks and collects feedback from visitors </p>
+				<p> In case you don&#39;t agree please <span id="leave">leave</span> the page</p>
 				<p> </p>
 				<p> </p>
 			</div>
