@@ -26,6 +26,7 @@ Meteor.methods({
       text:text, 
       chatId: chatId, 
       user : un
+
     });
 
   },
