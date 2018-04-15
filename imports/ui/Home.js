@@ -150,8 +150,6 @@ class Home extends Component {
         dist = dist * 180/Math.PI
         dist = dist * 60 * 1.1515
         dist = dist * 1.609344 
-       
-        return dist
 
         if (dist < min)
         {
@@ -161,7 +159,7 @@ class Home extends Component {
 
 	    }
 
-	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which'</p>';
+	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which+'</p>';
 	    
 	  }
 
