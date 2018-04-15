@@ -93,9 +93,15 @@ class Stuff extends Component {
 				<div className="col-sm-9">
 				<h2 id="cf">Community&#39;s Favors</h2>
 				<hr/>
+				<div className="row" id="sea">
+				<div className="col-sm-9">
+				<textarea className="com-text-3" placeholder = "Lookign for a favor? Feel free to search for it here! " ref = "text"/> 
+				</div>
+				<div className="col-sm-3">
+				<button className="my-btn-8" onClick = {this.searchPost.bind(this)}> Search </button>
+				</div>
+				</div> 
 				<div className="row">
-				<textarea placeholder = "su merce escriba aca el favor que quiere encontrar si le da pereza buscarlo en la lista de abajo" ref = "text"/> 
-				<button onClick = {this.searchPost.bind(this)}> Search </button> 
 				
 				<PostList
 					key = {45}
