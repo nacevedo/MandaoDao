@@ -262,6 +262,11 @@ ul.header li a {
 
 }
 
+h4#acc{
+
+	font-weight: bold;
+}
+
 /* PostList styles */ 
 
 #posts-title{
@@ -301,6 +306,13 @@ ul.header li a {
 	margin-bottom: 20px;
 }
 
+.box6{
+	background-color: rgba(251,52,83,0.6);
+	padding: 30px;
+	margin-bottom: 20px;
+	height: 100%;
+}
+
 /* Post style */
 
 #Post hr {
@@ -333,7 +345,7 @@ h2#cf{
 	background-color: #FB3453;
 	margin: 10px;
 	height: 40px;
-	width: 10%;
+	width: 15%;
 	min-width: 50px;
 	border: none;
 	font-weight: bold;
@@ -427,6 +439,41 @@ h2#cf{
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
 }
 
+.my-btn-6{
+
+	justify-content: center;
+	align-items: center;
+	display: block;
+	background-color: #FFB335;
+	margin: auto;
+	padding: 5px 20px;
+	height: 40px;
+	width: 200px;
+	border: none;
+	font-weight: bold;
+	font-size: 16px;
+	color: #fcfefd;
+	border-radius: 20px;
+	
+
+}
+
+.my-btn-6:hover {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+.my-btn-7{
+
+	background-color: rgba(0,0,0,0);
+	border: none;
+	font-size: 18px;
+
+}
+
+.my-btn-7:hover {
+	font-weight: bold;
+}
+
 
 /*Comments styles*/
 
@@ -511,7 +558,15 @@ div.static-likes{
 
 #chat-content {
 	border-radius: 1px;
-	background-color: rgba(30,74,74,0.5);
+	background-color: rgba(30,74,74,0.2);
+	overflow: auto;
+	height: 500px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#ChatMessageAdd{
+	padding-top: 10px;
 }
 
 
