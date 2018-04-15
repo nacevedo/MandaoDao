@@ -154,15 +154,17 @@ class Home extends Component {
         dist = dist * 60 * 1.1515
         dist = dist * 1.609344 
 
+        console.log(dist); 
         if (dist < min)
         {
         	min = dist; 
-        	which = city.name; 
+        	which = city.name;
+        	console.log(city.name);  
         }
 
 	    }
 
-	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which+ 'cuantos: '+ count+'</p>';
+	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which+ 'cuantos:   '+ count+'</p>';
 	    
 	  }
 
