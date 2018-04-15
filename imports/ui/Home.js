@@ -133,8 +133,36 @@ class Home extends Component {
 	    var latitude  = position.coords.latitude;
 	    var longitude = position.coords.longitude;
 
-	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-	    console.log("hola");
+	    var which = null; 
+	    var min = 999999999999; 
+
+	    for (city in cities)
+	    {
+
+	    var radlat1 = Math.PI * latitude/180;
+        var radlat2 = Math.PI * city.lat/180;
+        var radlon1 = Math.PI * longitude/180;
+        var radlon2 = Math.PI * city.lng/180
+        var theta = lon1-lon2
+        var radtheta = Math.PI * theta/180
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        dist = Math.acos(dist)
+        dist = dist * 180/Math.PI
+        dist = dist * 60 * 1.1515
+        dist = dist * 1.609344 
+       
+        return dist
+
+        if (dist < min)
+        {
+        	min = dist; 
+        	which = city.name; 
+        }
+
+	    }
+
+	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°     '+which'</p>';
+	    
 	  }
 
 	  function error() {
