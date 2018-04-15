@@ -27,3 +27,6 @@ practicalmeteor:mocha
 cultofcoders:mocha
 
 session
+mdg:validated-method
+ddp-rate-limiter
+aldeed:simple-schema

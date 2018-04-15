@@ -123,6 +123,7 @@ class Home extends Component {
 	geoFindMe() {
 	  var output = document.getElementById("out");
 
+
 	  if (!navigator.geolocation){
 	    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
 	    return;
@@ -133,7 +134,7 @@ class Home extends Component {
 	    var longitude = position.coords.longitude;
 
 	    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
+	    console.log("hola");
 	  }
 
 	  function error() {
@@ -141,8 +142,13 @@ class Home extends Component {
 	  }
 
 	  document.getElementById("out").innerHTML = "<p>Locating…</p>";
+	  var options = {
+  		enableHighAccuracy: false,
+  		timeout: 10000,
+  		maximumAge: 0
+		};
 
-	  navigator.geolocation.getCurrentPosition(success, error);
+	  navigator.geolocation.getCurrentPosition(success, error,options);
 	}
 
 

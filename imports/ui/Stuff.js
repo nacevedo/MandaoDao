@@ -18,7 +18,10 @@ class Stuff extends Component {
 
 	onVote(post, emoji) {
 
-		Meteor.call('posts.vote', post._id, emoji); 
+		
+		Meteor.call('posts.vote', post._id, emoji, (err, res) => {if (err) alert(err.error)}); 
+		
+		
 		/**
 		let postObj = Posts.findOne(post._id);
 

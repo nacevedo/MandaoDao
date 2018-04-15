@@ -1,14 +1,29 @@
 import { Mongo } from "meteor/mongo";
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
+import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 
 
 export const Posts = new Mongo.Collection("posts");
 
 if(Meteor.isServer) {
-	Meteor.publish("posts", () => {
-		return Posts.find({});
-	});
+  Meteor.publish("posts", () => {
+    return Posts.find({});
+  });
+
+  const loginRule = {
+  userId(userId) {
+    const user = Meteor.users.findOne(userId);
+    return user && user.type !== 'admin';
+  },
+
+  type: 'method',
+  name: 'posts.vote'
+};
+
+
+DDPRateLimiter.addRule(loginRule, 5, 5000);
+
 }
 
 Meteor.methods({
@@ -21,14 +36,14 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
     Posts.insert({
-			city: city, 
-			who: Meteor.user(), 
-			text,
-			title:title, 
-			voteCount:0,
-			votes:{
-				"👍":0
-			}
+      city: city, 
+      who: Meteor.user(), 
+      text,
+      title:title, 
+      voteCount:0,
+      votes:{
+        "👍":0
+      }
     });
   },
   'posts.remove'(postId) {
@@ -59,4 +74,5 @@ Meteor.methods({
 
   },
 });
+
 
