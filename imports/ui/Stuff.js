@@ -95,7 +95,7 @@ class Stuff extends Component {
 				<hr/>
 				<div className="row" id="sea">
 				<div className="col-sm-9">
-				<textarea className="com-text-3" placeholder = "Lookign for a favor? Feel free to search for it here! " ref = "text"/> 
+				<textarea className="com-text-3" placeholder = "Looking for a favor? Feel free to search for it here! " ref = "text"/> 
 				</div>
 				<div className="col-sm-3">
 				<button className="my-btn-8" onClick = {this.searchPost.bind(this)}> Search </button>

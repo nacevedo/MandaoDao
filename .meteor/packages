@@ -23,7 +23,6 @@ accounts-password
 accounts-ui
 accounts-google
 google-config-ui
-practicalmeteor:mocha
 cultofcoders:mocha
 
 session

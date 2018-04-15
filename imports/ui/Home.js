@@ -69,6 +69,10 @@ class Home extends Component {
 		this.props.updateCity(this.state.value);
 	}
 
+	onChangeCity2(city){
+		this.props.updateCity(city);
+	}
+
 	geoFindMe() {
 	  var output = document.getElementById("out");
 
@@ -120,12 +124,14 @@ class Home extends Component {
 	        	which = cities[i].name;
 	        	console.log(cities[i].name);  
 	        	topC.push(which);
-	        	printCities = printCities + " <br/> " + which;
+	        	printCities = printCities + "<NavLink to='/city'><button onClick={onChangeCity2(" + which + ")} className='my-btn-7'>"+which+"</button></NavLink>";
+
+	        	
 	        }
 
 	    }
 
-	    output.innerHTML = '<p>'+printCities +'</p>';
+	    output.innerHTML = '<div>'+printCities +'</div>';
 	    
 	  }
 
@@ -199,21 +205,5 @@ class Home extends Component {
 	}
 }
 
-/*
-if(Meteor.isClient) {
 
-	Meteor.startup(function() {
-	    if (Session.get('lat') == undefined 
-	             || Session.get('lon') == undefined) {
-	        navigator.geolocation.getCurrentPosition(function(position) {
-	            Session.set('lat', position.coords.latitude);
-	            console.log(Session.get('lat'));
-	            console.log(Session.get('lon'));
-	            Session.set('lon', position.coords.longitude);
-	        });
-	    }
-	});
-
-}
-*/
 export default Home;
