@@ -51,12 +51,13 @@ if(Meteor.isServer){
 		    // in the correct mode
 		    let post = Posts.findOne({"title": "tengo hambre"});
 
-		    Meteor.call('comments.insert', "Bogotá", post._id, "Burger place"); 
+		    Meteor.call('comments.insert', "post._id", "Burger place"); 
 
 		    let newComment = Comments.findOne({"text": "Burger place"});
 
-		    assert.equal("Bogotá", newComment.city);
 		    assert.equal("Burger place", newComment.text); 
+		    assert.equal("post._id", newComment.post); 
+
 		});
 		});
 		describe('comments.insert', function () {
@@ -70,9 +71,27 @@ if(Meteor.isServer){
 		    assert.throws(() => {
 
 	        //whatever you want to run that should throw the error goes here
-	        Meteor.call('comments.insert', "Bogotá", "Any reccomendations for burger place", "Burger place"); 
+	        Meteor.call('comments.insert', "post._id", "Burger place"); 
 
 	    }, Meteor.Error, /not-authorized/); 
+		});
+
+		});
+
+		describe('comments.vote', function () {
+
+			let currentUser = faker.name.findName();
+
+			it('This should NOT vote a post', function () {
+		    // This code will be executed by the test driver when the app is started
+		    // in the correct mode
+
+		    assert.throws(() => {
+
+	        //whatever you want to run that should throw the error goes here
+	        Meteor.call('comments.vote', "aaaaaa", "👍"); 
+
+	    }, Meteor.Error, /Post not found!/); 
 		});
 
 		});

@@ -40,10 +40,10 @@ if(Meteor.isServer){
 
 		    Meteor.call('chats.insert', "Juana", "Pedro");
 
-		    let newChat = Chats.findOne({"user1":"Juana"});
-		    console.log(newChat);
-		    assert.equal("Juana", newChat.user1);
-		    assert.equal("Pedro", newChat.user2); 
+		    let newChat = Chats.findOne({"user2":"Juana"});
+
+		    assert.equal("Pedro", newChat.user1);
+		    assert.equal("Juana", newChat.user2); 
 		});
 		});
 		describe('chats.insert', function () {

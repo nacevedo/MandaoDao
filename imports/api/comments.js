@@ -36,11 +36,10 @@ DDPRateLimiter.addRule(commentInsert, 5, 5000);
 
 Meteor.methods({
 
-  'comments.insert'(city, postId, text) {
-  
-    console.log(postId); 
-    console.log(text); 
-    
+
+  'comments.insert'( postId, text) {
+
+
     check(postId, String); 
     check(text, String); 
  
@@ -71,8 +70,9 @@ Meteor.methods({
     console.log(postObj); 
 
     if (!postObj) {
-      console.err("Post not found!");
-      return;
+      throw new Meteor.Error('Post not found!');
+      //console.err("Post not found!");
+      //return;
     }
 
     postObj.voteCount+=1;

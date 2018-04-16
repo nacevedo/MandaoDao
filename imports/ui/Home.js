@@ -87,12 +87,17 @@ class Home extends Component {
 	    var longitude = position.coords.longitude;
 
 	    var which = null; 
+	    var which1 = null; 
+	    var which2 = null; 
 	    var min = 999999999999; 
 
 	    var topC = [];
 	    var printCities = "";
 
 	    var count = 0; 
+
+	    var min1 = 999999999999;
+	    var min2 = 999999999999;
 
 	    for (i in cities)
 	    {
@@ -118,20 +123,38 @@ class Home extends Component {
 	       
 	        dist = dist * 1.609344;
 
-	        if (dist < min)
+	        if (dist < min2)
 	        {
-	        	min = dist; 
-	        	which = cities[i].name;
-	        	console.log(cities[i].name);  
-	        	topC.push(which);
 
-	        	printCities = printCities + "<br/>" + which;
+	        	if (dist < min1)
+		        {
+		        	
+		        	if (dist < min)
+			        {
+			        	min = dist; 
+			        	which = cities[i].name;
+			        	console.log(cities[i].name); 
+			        	
+			        }
+			        else 
+			        {
+			        	min1= dist; 
+		        		which1 = cities[i].name;
+		        		console.log(cities[i].name);  
+			        }	
+		        }
+		        else
+		        {
+		        	min2 = dist; 
+		        	which2 = cities[i].name;
+		        	console.log(cities[i].name); 
 
-
-	        	
-	        }
+		        }	
+	        }    
 
 	    }
+
+	    printCities = printCities + "<br/>" + which + "<br/>" + which1 +"<br/>" + which2;
 
 	    output.innerHTML = '<p>'+printCities +'</p>';
 	    

@@ -63,5 +63,23 @@ if(Meteor.isServer){
 		});
 
 		});
+
+		describe('posts.vote', function () {
+
+			let currentUser = faker.name.findName();
+
+			it('This should NOT vote a post', function () {
+		    // This code will be executed by the test driver when the app is started
+		    // in the correct mode
+
+		    assert.throws(() => {
+
+	        //whatever you want to run that should throw the error goes here
+	        Meteor.call('posts.vote', "aaaaaa", "👍"); 
+
+	    }, Meteor.Error, /Post not found!/); 
+		});
+
+		});
 	});
 }

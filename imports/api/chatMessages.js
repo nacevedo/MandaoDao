@@ -44,11 +44,6 @@ Meteor.methods({
 
     });
 
-  },
-  'chatMessages.remove'(postId) {
-    check(postId, String);
- 
-    ChatMessages.remove(postId);
-  },
+  }
 });
 
