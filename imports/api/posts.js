@@ -14,15 +14,24 @@ if(Meteor.isServer) {
   const loginRule = {
   userId(userId) {
     const user = Meteor.users.findOne(userId);
-    return user && user.type !== 'admin';
+    return user;
   },
 
   type: 'method',
   name: 'posts.vote'
 };
 
+  const postInsert = {
+  userId(userId) {
+    const user = Meteor.users.findOne(userId);
+    return user;
+  },
 
-DDPRateLimiter.addRule(loginRule, 5, 5000);
+  type: 'method',
+  name: 'posts.insert'
+};
+
+DDPRateLimiter.addRule(postInsert, 5, 5000);
 
 }
 

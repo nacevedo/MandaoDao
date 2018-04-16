@@ -9,6 +9,20 @@ if(Meteor.isServer) {
 	Meteor.publish("chatMessages", () => {
 		return ChatMessages.find({});
 	});
+
+    const chatMessagesInsert = {
+  userId(userId) {
+    const user = Meteor.users.findOne(userId);
+    return user;
+  },
+
+  type: 'method',
+  name: 'chatMessages.insert'
+};
+
+
+DDPRateLimiter.addRule(chatMessagesInsert, 5, 5000);
+
 }
 
 

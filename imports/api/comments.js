@@ -8,6 +8,30 @@ if(Meteor.isServer) {
 	Meteor.publish("comments", () => {
 		return Comments.find({});
 	});
+
+   const commentRule = {
+  userId(userId) {
+    const user = Meteor.users.findOne(userId);
+    return user;
+  },
+
+  type: 'method',
+  name: 'comments.vote'
+};
+
+  const commentInsert = {
+  userId(userId) {
+    const user = Meteor.users.findOne(userId);
+    return user;
+  },
+
+  type: 'method',
+  name: 'comments.insert'
+};
+
+DDPRateLimiter.addRule(commentRule, 5, 5000);
+DDPRateLimiter.addRule(commentInsert, 5, 5000);
+
 }
 
 Meteor.methods({

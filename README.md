@@ -22,6 +22,14 @@ Install [Meteor](https://www.meteor.com/install) then clone the repo and run
 meteor npm install
 meteor
 ```
+
+## Running Tests
+In order tu run the tests of the project just run
+
+```
+meteor test --driver-package=cultofcoders:mocha --port 3100
+```
+
 ## Motivation
 This is a project for a [web development class](http://johnguerra.co/classes/webDevelopment_spring_2018/) in [Uniandes](https://www.uniandes.edu.co). The objective is to make a quick project using **Meteor with React**.
 

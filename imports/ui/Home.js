@@ -70,7 +70,7 @@ class Home extends Component {
 	}
 
 	onChangeCity2(city){
-		this.props.updateCity(city);
+		this.props.updateCity(this.state.city);
 	}
 
 	geoFindMe() {
@@ -124,7 +124,9 @@ class Home extends Component {
 	        	which = cities[i].name;
 	        	console.log(cities[i].name);  
 	        	topC.push(which);
+
 	        	printCities = printCities + "<br/>" + which;
+
 
 	        	
 	        }
