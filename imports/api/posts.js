@@ -57,11 +57,6 @@ Meteor.methods({
       }
     });
   },
-  'posts.remove'(postId) {
-    check(postId, String);
- 
-    Posts.remove(postId);
-  },
   'posts.vote'(postId, emoji) {
 
     check(postId, String);
@@ -73,8 +68,9 @@ Meteor.methods({
     console.log("llega hasta aca" + postObj); 
 
     if (!postObj) {
-      console.err("Post not found!");
-      return;
+      throw new Meteor.Error('Post not found!');
+      //console.err("Post not found!");
+      //return;
     }
 
     postObj.voteCount+=1;

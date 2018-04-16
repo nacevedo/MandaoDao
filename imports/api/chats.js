@@ -44,11 +44,6 @@ Meteor.methods({
       user1: un1,  
       user2: username
     });
-  },
-  'chats.remove'(postId) {
-    check(postId, String);
- 
-    Chats.remove(postId);
-  },
+  }
 });
 
