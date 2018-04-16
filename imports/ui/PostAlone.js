@@ -24,6 +24,13 @@ class PostAlone extends Component {
   }
 
   onAdd(text) {
+
+    if (typeof text !== 'string')
+    {
+      window.alert ("Write only text please!"); 
+      return; 
+    }
+
     if (Meteor.userId() === null) 
     {
       window.alert("You are not registered ! Please sign in."); 

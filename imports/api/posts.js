@@ -39,6 +39,8 @@ Meteor.methods({
 
   'posts.insert'(city, text, title) {
     check(text, String);
+    check(city, String);
+    check(text, String);
  
     // Make sure the user is logged in before inserting a task
     if (! Meteor.user()) {
@@ -61,6 +63,9 @@ Meteor.methods({
     Posts.remove(postId);
   },
   'posts.vote'(postId, emoji) {
+
+    check(postId, String);
+    check(emoji, String);
 
 
     let postObj = Posts.findOne(postId);

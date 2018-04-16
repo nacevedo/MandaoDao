@@ -30,6 +30,9 @@ DDPRateLimiter.addRule(chatInsert, 5, 5000);
 Meteor.methods({
 
   'chats.insert'(username, un1) {
+
+    check(username, String); 
+    check(un1, String); 
  
     // Make sure the user is logged in before inserting a task
     if (! Meteor.user()) {

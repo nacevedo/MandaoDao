@@ -25,6 +25,14 @@ class ChatAlone extends Component {
   }
 
   onAdd(text, user){
+
+    if (typeof text !== 'string' || typeof user !== 'string' )
+    {
+      window.alert ("Write only text please!"); 
+      return; 
+    }
+    
+
      if (Meteor.userId() === null) 
     {
       window.alert ("You are not registered! Please sign in."); 

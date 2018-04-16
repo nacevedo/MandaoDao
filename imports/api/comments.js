@@ -37,6 +37,9 @@ DDPRateLimiter.addRule(commentInsert, 5, 5000);
 Meteor.methods({
 
   'comments.insert'(city, postId, text) {
+
+    check(postId, String); 
+    check(text, String); 
  
     // Make sure the user is logged in before inserting a task
     if (! Meteor.user()) {
@@ -45,7 +48,6 @@ Meteor.methods({
   
  
     Comments.insert({
-      city: city, 
       post: postId,
       who: Meteor.user(), 
       text,
@@ -58,6 +60,8 @@ Meteor.methods({
     });
   },
     'comments.vote'(postId, emoji) {
+      check(postId, String); 
+      check(emoji, String);
 
 
     let postObj = Comments.findOne(postId);
