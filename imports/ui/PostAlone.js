@@ -36,32 +36,9 @@ class PostAlone extends Component {
       window.alert("You are not registered ! Please sign in."); 
       return; 
     }
-
-    console.log(this.props.city); 
+ 
 
     Meteor.call('comments.insert', this.props.city, this.props.postID, text);
-
-/**
-    // User exists ?? 
-
-    if (Meteor.userId() === null) 
-    {
-      window.alert("You are not registered ! Please sign in."); 
-      return; 
-    }
-
-
-    if (!text) return;
-    Comments.insert({
-      city: this.props.city, 
-      post: this.props.post._id,
-      who: Meteor.user(), 
-      text,
-      voteCount:0,
-      votes:{
-        "👍":0
-      }
-    });**/
 
   }
 
@@ -120,7 +97,7 @@ export default withTracker(
   (x) => {
     Meteor.subscribe("comments");
     Meteor.subscribe("posts");
-    console.log(Posts.findOne(x.postID)); 
+     
     return {
 
       comments: Comments.find({post : x.postID}, {sort: {voteCount:-1}}).fetch(), 

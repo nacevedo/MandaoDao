@@ -32,19 +32,11 @@ class Chat extends Component {
     {
       window.alert ("You are not registered! Please sign in."); 
       return; 
-    }
-    console.log (this.props.chat_id);   
+    }   
 
     Meteor.call('chatMessages.insert', text, this.props.chat_id); 
 }
 
-/**
-    ChatMessages.insert({
-      text:text, 
-      chatId: this.props.chat._id
-    });
-  }
-  **/
 
   renderPosts() {
     return this.props.chatMessages.map((p,i) =>
@@ -63,7 +55,6 @@ class Chat extends Component {
 
   onChangeUser1(){
     this.props.updateUser1(this.props.chat.user1);
-    console.log(this.props.chat.user1);
   }
 
   onChangeUser2(){

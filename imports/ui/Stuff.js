@@ -82,7 +82,7 @@ class Stuff extends Component {
 	}
 
 	searchPost(){
-		console.log("esta llegando al search post " + this.refs.text.value)
+		
 		this.props.filter(this.refs.text.value); 
 	}
 
@@ -138,7 +138,7 @@ Stuff.propTypes = {
 
 export default withTracker(
   (x) => {
-  	console.log(x.search); 
+  	
   	Meteor.subscribe("posts");
   	if (x.search === null || x.search === "")
   	{

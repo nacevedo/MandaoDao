@@ -86,8 +86,7 @@ class ChatMessage extends Component {
       </div>)
     }
     else{
-      console.log(this.userName());
-      console.log(this.props.chatMessage.user);
+      
       return(
       <div className="other-message">
         <p>{this.props.chatMessage.user}: {this.props.chatMessage.text}</p>
