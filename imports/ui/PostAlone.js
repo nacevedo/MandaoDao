@@ -120,6 +120,7 @@ export default withTracker(
   (x) => {
     Meteor.subscribe("comments");
     Meteor.subscribe("posts");
+    Meteor.subscribe("chats");
     console.log(Posts.findOne(x.postID)); 
     return {
 
