@@ -125,38 +125,31 @@ class Home extends Component {
 
 	        if (dist < min2)
 	        {
-
 	        	if (dist < min1)
-		        {
-		        	
+		        {	
 		        	if (dist < min)
 			        {
 			        	min = dist; 
-			        	which = cities[i].name;
-			        	console.log(cities[i].name); 
-			        	
+			        	which = cities[i].name;	
 			        }
 			        else 
 			        {
 			        	min1= dist; 
 		        		which1 = cities[i].name;
-		        		console.log(cities[i].name);  
 			        }	
 		        }
 		        else
 		        {
 		        	min2 = dist; 
 		        	which2 = cities[i].name;
-		        	console.log(cities[i].name); 
-
 		        }	
 	        }    
 
 	    }
 
-	    printCities = printCities + "<br/>" + which + "<br/>" + which1 +"<br/>" + which2;
+	    printCities = printCities + "<br/>" + which + "<br/><br/>" + which1 +"<br/><br/>" + which2;
 
-	    output.innerHTML = '<p>'+printCities +'</p>';
+	    output.innerHTML = '<h4>'+printCities +'</h4>';
 	    
 	  }
 

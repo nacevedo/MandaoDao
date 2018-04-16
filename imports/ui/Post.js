@@ -21,23 +21,7 @@ class Post extends Component {
 
     Meteor.call('comments.vote', comment, emoji); 
 
-    /**
-    let postObj = Comments.findOne(comment._id);
-
-    if (!postObj) {
-      console.err("Post not found!");
-      return;
-    }
-
-    postObj.voteCount+=1;
-    if (postObj.votes[emoji]===undefined) {
-      postObj.votes[emoji]=0;
-    }
-    postObj.votes[emoji]+=1;
-
-    Comments.update(postObj._id,
-      postObj);
-      **/
+    
   }
 
   onAdd(text) {
@@ -49,24 +33,9 @@ class Post extends Component {
       window.alert("You are not registered ! Please sign in."); 
       return; 
     }
-    console.log(this.props.city); 
 
     Meteor.call('comments.insert', this.props.city, this.props.post_id, text);
 
-
-/**
-    if (!text) return;
-    Comments.insert({
-      city: this.props.city, 
-      post: this.props.post._id,
-      who: Meteor.user(), 
-      text,
-      voteCount:0,
-      votes:{
-        "👍":0
-      }
-    });
-    **/
 
   }
 
@@ -97,7 +66,7 @@ class Post extends Component {
   }
 
   onChangePostID(){
-    console.log(this.props.post._id);
+    
     this.props.updatePostID(this.props.post._id);
   }
 
