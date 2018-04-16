@@ -97,7 +97,8 @@ export default withTracker(
   (x) => {
     Meteor.subscribe("comments");
     Meteor.subscribe("posts");
-     
+    Meteor.subscribe("chats");
+
     return {
 
       comments: Comments.find({post : x.postID}, {sort: {voteCount:-1}}).fetch(), 

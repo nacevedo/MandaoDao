@@ -39,11 +39,33 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
     
- 
+    exist = false; 
+
+    console.log(un1); 
+    console.log(username)
+
+    var hay = Chats.find({ $and : [{"user1" : un1}, {"user2" : username}]}).fetch(); 
+    var sera = Chats.find({ $and : [{"user1" : username}, {"user2" : un1}]}).fetch(); 
+
+    console.log(hay.length); 
+    console.log(sera.length); 
+
+    if (hay.length !== 0 || sera.length !== 0)
+    {
+      exist = true; 
+    }
+
+    console.log(exist); 
+
+    if (!exist)
+    {
+    console.log("insertando ando"); 
+
     Chats.insert({
       user1: un1,  
       user2: username
     });
   }
+
 });
 
