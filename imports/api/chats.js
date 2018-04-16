@@ -6,9 +6,9 @@ import { check } from 'meteor/check';
 export const Chats = new Mongo.Collection("chats");
 
 if(Meteor.isServer) {
-	Meteor.publish("chats", () => {
-		return Chats.find({});
-	});
+  Meteor.publish("chats", () => {
+    return Chats.find({});
+  });
 
 
   const chatInsert = {
@@ -66,6 +66,5 @@ Meteor.methods({
       user2: username
     });
   }
-
+  },
 });
-
