@@ -37,7 +37,10 @@ DDPRateLimiter.addRule(commentInsert, 5, 5000);
 Meteor.methods({
 
   'comments.insert'(city, postId, text) {
-
+  
+    console.log(postId); 
+    console.log(text); 
+    
     check(postId, String); 
     check(text, String); 
  
