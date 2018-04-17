@@ -19,8 +19,9 @@ class PostAlone extends Component {
 
   //This are the functions for comments 
   onVote(comment, emoji) {
+
     
-    Meteor.call('comments.vote', comment, emoji); 
+    Meteor.call('comments.vote', comment, emoji, (err, res) => {if (err) alert(err.error)} ); 
   }
 
   onAdd(text) {

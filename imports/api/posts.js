@@ -31,6 +31,7 @@ if(Meteor.isServer) {
   name: 'posts.insert'
 };
 
+DDPRateLimiter.addRule(loginRule, 5, 5000);
 DDPRateLimiter.addRule(postInsert, 5, 5000);
 
 }
