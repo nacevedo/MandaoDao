@@ -62,7 +62,7 @@ class Stuff extends Component {
 			return; 
 		}
 
-		Meteor.call('posts.insert', this.props.city, text, title); 
+		Meteor.call('posts.insert', this.props.city, text, title, (err, res) => {if (err) alert(err.error)}); 
 
 
 		/**

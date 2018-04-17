@@ -21,7 +21,7 @@ class PostAlone extends Component {
   onVote(comment, emoji) {
 
     
-    Meteor.call('comments.vote', comment, emoji, (err, res) => {if (err) alert(err.error)} ); 
+    Meteor.call('comments.vote', comment, emoji, (err, res) => {if (err) alert(err.error)}); 
   }
 
   onAdd(text) {
@@ -41,7 +41,7 @@ class PostAlone extends Component {
     }
  
 
-    Meteor.call('comments.insert', this.props.postID, text);
+    Meteor.call('comments.insert', this.props.postID, text, (err, res) => {if (err) alert(err.error)});
 
   }
 
