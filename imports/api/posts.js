@@ -32,6 +32,9 @@ if(Meteor.isServer) {
 };
 
 DDPRateLimiter.addRule(postInsert, 5, 5000);
+  
+  //Es buena idea lmitar los votos
+DDPRateLimiter.addRule(posts.vote, 5, 5000);
 
 }
 
