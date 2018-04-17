@@ -26,7 +26,7 @@ class ChatAlone extends Component {
 
   onAdd(text, user){
 
-    if (typeof text !== 'string' || typeof user !== 'string' )
+    if (typeof text !== 'string')
     {
       window.alert ("Write only text please!"); 
       return; 

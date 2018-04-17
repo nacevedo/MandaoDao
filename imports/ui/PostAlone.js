@@ -25,6 +25,8 @@ class PostAlone extends Component {
 
   onAdd(text) {
 
+    console.log(this.props.postID); 
+
     if (typeof text !== 'string')
     {
       window.alert ("Write only text please!"); 
@@ -38,7 +40,7 @@ class PostAlone extends Component {
     }
  
 
-    Meteor.call('comments.insert', this.props.city, this.props.postID, text);
+    Meteor.call('comments.insert', this.props.postID, text);
 
   }
 

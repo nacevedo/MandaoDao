@@ -39,8 +39,8 @@ Meteor.methods({
 
   'comments.insert'( postId, text) {
 
+    
 
-    check(postId, String); 
     check(text, String); 
  
     // Make sure the user is logged in before inserting a task
@@ -62,8 +62,7 @@ Meteor.methods({
     });
   },
     'comments.vote'(postId, emoji) {
-      check(postId, String); 
-      check(emoji, String);
+      
 
 
     let postObj = Comments.findOne(postId);
