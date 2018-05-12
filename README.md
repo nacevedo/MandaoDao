@@ -3,13 +3,13 @@
 
 # San Francisco Routes
 
-San Francisco Routes will help you find very usefull live information about Next-Busroutes!
+San Francisco Routes will help you find very usefull live information about Next-Bus routes!
 
-#### **heeee**
-Just enter to the app register yourself and create a new favor in your current city, people who are living there can help put comments that can help all the community with the same problems! Additionaly, if you want to contact them you just need to click on the comment to be in touch with them. 
+#### **About**
+This apps alows you to visualize the added distance of each San Francisco Next-Bus routes in order to help user undestand how the buses on each route are moving to make choices about their means of transport. Also, users that are interested in a single route can select it an get comments about that route of other users, they can also comment if they like to help the community with usefull feedback about experiences with certain route. 
 
 #### **Creative Addition**
-Enter to the webpage and search for your city, see the favors people have post. If there's one you can help with don't hesitate to sign in put a comment, people can use your advise to improve their experience in your city. You can also offer your services to someone with an specific need or problem, so you can make some extra pennies for your milkshake! 😜
+You can filter the routes to compare them easily! just check the boxes of the routes that you don´t want to see in the graph an it will update automatically. This makes comparision between a group of routes much easier. 
 
 ## Check it out here!
 Currently our app is hosted in heroku. Please check it out .. [click here!](http://sf-nextbus-buses.herokuapp.com/)
